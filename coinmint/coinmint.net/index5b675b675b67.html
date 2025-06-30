@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from coinmint.net/bb.coinmint.cc/index5b67?rh1/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:37 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from coinmint.net/index5b675b67?rh1/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Mining | Passive Income with Coinmint's Hashrate Leasing</title>
+    <meta name="keywords" content="cloud mining, hashrate leasing, passive income, Bitcoin mining, cryptocurrency mining">
+    <meta name="description" content="Coinmint's cloud mining solutions allow you to rent hashrate and earn passive income from Bitcoin mining without hardware management.">
+    <link href="skin/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="skin/css/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link href="cdn.jsdelivr.net/npm/font-awesome%404.7.0/css/font-awesome.min.html" rel="stylesheet">
+    <script src="cdn.jsdelivr.net/npm/chart.js%404.4.8/dist/chart.umd.min.html"></script>
+    <script src="skin/js/jquery.min.js"></script>
+    <script src="skin/js/bootstrap.min.js"></script>
+    <script src="skin/js/touchslide.1.1.js"></script>
+    <script src="skin/js/common.js"></script>
+    <link href="skin/css/animate.min.css" rel="stylesheet" />
+    <script src="skin/js/wow.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3B82F6;
+            --secondary-color: #10B981;
+            --accent-color: #F59E0B;
+            --dark-color: #1E293B;
+            --light-color: #F8FAFC;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #334155;
+        }
+        
+        .hero-banner {
+            background: linear-gradient(rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.8)), url(static/upload/image/20220927/1664249217591215.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .stat-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #64748B;
+        }
+        
+        .process-step {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .feature-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 25px;
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .user-group {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .user-group:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hashrate-chart {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 250px;
+            }
+            
+            .stat-card,
+            .process-step,
+            .feature-card {
+                padding: 20px;
+            }
+        }
+
+        /* 页脚样式修改 */
+        #footer {
+            background-color: #1a1a1a; /* 深灰色背景 */
+            color: #f0f0f0; /* 浅灰色文字 */
+            padding: 40px 0;
+        }
+        #footer h4 {
+            color: #ffffff; /* 白色标题 */
+            margin-bottom: 20px;
+        }
+        #footer p, 
+        #footer ul li {
+            color: #f0f0f0; /* 浅灰色正文 */
+        }
+        #footer a {
+            color: #f0f0f0; /* 浅灰色链接 */
+            transition: color 0.3s;
+        }
+        #footer a:hover {
+            color: #3498db; /* 蓝色链接悬停效果 */
+        }
+        .footer-copyright {
+            background-color: #111111; /* 更深的灰色版权区域 */
+            padding: 15px 0;
+            margin-top: 30px;
+            border-top: 1px solid #222222;
+        }
+        .footer-copyright a {
+            color: #3498db; /* 版权区蓝色链接 */
+        }
+        .footer-newsletter input.form-control {
+            background-color: #2c3e50; /* 订阅框深灰色背景 */
+            color: #ffffff;
+            border-color: #3498db;
+        }
+        .footer-newsletter .input-group-btn button {
+            background-color: #3498db; /* 订阅按钮蓝色背景 */
+            border-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <nav id="cd-lateral-nav">
+        <ul class="cd-navigation">
+            <li><a href='index-2.html'>Home</a></li>
+            <li class="item-has-children"><a href='index932e932e932e.html?pages_44/'>About Us</a>
+                <ul class='sub-menu'>
+                    <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='Company Overview'>Company Overview</a></li>
+                    <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+                    <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Executive Team'>Executive Team</a></li>
+                    <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='Careers'>Careers</a></li>
+                    <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='Technology & IP'>Technology & IP</a></li>
+                    <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
+                    <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Milestones'>Milestones</a></li>
+                </ul>
+            </li>
+            <li class="item-has-children"><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Solutions</a>
+                <ul class='sub-menu'>
+                    <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial Mining'>Industrial Mining</a></li>
+                    <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
+                    <li><a href='index686e686e686e.html?xm3/' id='lsed' title='Trading Platform'>Trading Platform</a></li>
+                    <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
+                </ul>
+            </li>
+            <li class="item-has-children"><a href='index7db57db57db5.html?list_39/'>Company History</a>
+                <ul class='sub-menu'>
+                    <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='Origins'>Origins</a></li>
+                    <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG Investment'>NYDIG Investment</a></li>
+                </ul>
+            </li>
+            <li class="item-has-children"><a class='current' href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
+                <ul class='sub-menu'>
+                    <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
+                    <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Miner Hosting'>Miner Hosting</a></li>
+                    <li><a href='indexcd9ccd9ccd9c.html?rh5/' id='lsed' title='Hosted Mining'>Hosted Mining</a></li>
+                    <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Profit Calculation'>Profit Calculation</a></li>
+                    <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+                </ul>
+            </li>
+            <li><a href='https://direct.lc.chat/19126558/' >Contact Us</a></li>
+            <li><a href='https://pc.coinmint.cc/#/home' >Trading Platform</a></li>
+            <li><a href='https://www.nicehash.com/mining' >Hosted Mining</a></li>
+        </ul>
+    </nav>
+    <header id="header">
+        <div class="container">
+            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/></a></div>
+            <div class="top_des"></div>
+            <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
+            <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
+        </div>
+    </header>
+    <div class="clear"></div>
+    <nav id="navigate">
+        <div class="container">
+            <ul>
+                <li class="first_menu"><a href='index-2.html'>Home</a></li>
+                <li><a href='index932e932e932e.html?pages_44/'>About Us</a>
+                    <ul class='drop_menu'>
+                        <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='Company Overview'>Company Overview</a></li>
+                        <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+                        <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Executive Team'>Executive Team</a></li>
+                        <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='Careers'>Careers</a></li>
+                        <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='Technology & IP'>Technology & IP</a></li>
+                        <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
+                        <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Milestones'>Milestones</a></li>
+                    </ul>
+                </li>
+                <li><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Solutions</a>
+                    <ul class='drop_menu'>
+                        <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial Mining'>Industrial Mining</a></li>
+                        <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
+                        <li><a href='index686e686e686e.html?xm3/' id='lsed' title='Trading Platform'>Trading Platform</a></li>
+                        <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
+                    </ul>
+                </li>
+                <li><a href='index7db57db57db5.html?list_39/'>Company History</a>
+                    <ul class='drop_menu'>
+                        <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='Origins'>Origins</a></li>
+                        <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG Investment'>NYDIG Investment</a></li>
+                    </ul>
+                </li>
+                <li><a class='current' href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
+                    <ul class='drop_menu'>
+                        <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
+                        <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Miner Hosting'>Miner Hosting</a></li>
+                        <li><a href='indexcd9ccd9ccd9c.html?rh5/' id='lsed' title='Hosted Mining'>Hosted Mining</a></li>
+                        <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Profit Calculation'>Profit Calculation</a></li>
+                        <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+                    </ul>
+                </li>
+                <li><a href='https://direct.lc.chat/19126558/'>Contact Us</a></li>
+                <li><a href='https://pc.coinmint.cc/#/home'>Trading Platform</a></li>
+                <li><a href='https://www.nicehash.com/mining'>Hosted Mining</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="clear"></div>
+    <div class="cd-main-content">
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="container text-center">
+                <h1 class="text-3xl md:text-4xl font-bold">Cloud Mining Solutions</h1>
+                <p class="mt-4 text-lg opacity-90">Passive income from Bitcoin mining without hardware management</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3">
+                    <div class="left_list">
+                        <div class="left_top">
+                            <h3>Mining Guide</h3>
+                        </div>
+                        <div class="left_con">
+                            <div class="type_list">
+                                <ul>
+                                    <li class="first_cat"><a class='current' href='index5b675b675b67.html?rh1/' title='Cloud Mining'>Cloud Mining</a></li>
+                                    <li class="first_cat"><a href='indexdd9fdd9fdd9f.html?rh2/' title='Miner Hosting'>Miner Hosting</a></li>
+                                    <li class="first_cat"><a href='indexcd9ccd9ccd9c.html?rh5/' title='Hosted Mining'>Hosted Mining</a></li>
+                                    <li class="first_cat"><a href='indexebf0ebf0ebf0.html?rh3/' title='Profit Calculation'>Profit Calculation</a></li>
+                                    <li class="first_cat"><a href='index0c760c760c76.html?rh4/' title='Why Coinmint'>Why Coinmint</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="col-md-9">
+                    <div class="right_top channel_top">
+                        <h3>Cloud Mining: Passive Income with Hashrate Leasing</h3>
+                        <span> <strong>Current position:&nbsp;&nbsp;</strong> <a href='index-2.html'>Home</a> > <a href='index7f127f127f12.html?ronghe/'>Mining Guide</a> > <a href='index5b675b675b67.html?rh1/'>Cloud Mining</a> </span>
+                    </div>
+                    <div class="right_con maximg">
+                        
+                        <!-- Cloud Mining Stats -->
+                        <div class="row mb-8">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="stat-card">
+                                    <div class="stat-value">100+ PH/s</div>
+                                    <div class="stat-label">Total Cloud Hashrate</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="stat-card">
+                                    <div class="stat-value">$0.03/kWh</div>
+                                    <div class="stat-label">Energy Cost</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="stat-card">
+                                    <div class="stat-value">99.9%</div>
+                                    <div class="stat-label">Uptime Guarantee</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="stat-card">
+                                    <div class="stat-value">$1,000</div>
+                                    <div class="stat-label">Starting Investment</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- What is Cloud Mining -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">What is Cloud Mining?</h2>
+                            <p>Cloud mining is a service model where professional mining facilities provide hardware and infrastructure, allowing users to remotely rent hashrate to participate in cryptocurrency mining (e.g., Bitcoin) and earn daily rewards. Unlike traditional mining—where you buy, install, and maintain hardware—cloud mining lets you access real mining capacity without physical equipment.</p>
+                            
+                            <p class="mt-4">The core value of cloud mining is enabling investors to indirectly own a share of "mining capacity," participating in blockchain's underlying economy with lower barriers to entry and earning output from the real block production system.</p>
+                            
+                            <div class="hashrate-chart">
+                                <h4 class="mb-4">Cloud Hashrate Distribution (2024)</h4>
+                                <canvas id="hashrateChart" height="250"></canvas>
+                            </div>
+                        </section>
+
+                        <!-- How It Works -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">How Cloud Mining Works</h2>
+                            <p>Our cloud mining process is designed for simplicity and transparency, allowing anyone to participate in Bitcoin mining with just a few clicks.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="process-step" data-step="1">
+                                        <h4 class="mb-3">1. Infrastructure Deployment</h4>
+                                        <p>We deploy state-of-the-art ASIC mining equipment (e.g., Antminer S19XP) in our 100% hydroelectric-powered data centers, connecting to our high-efficiency cooling and power systems.</p>
+                                    </div>
+                                    
+                                    <div class="process-step" data-step="3">
+                                        <h4 class="mb-3">3. Mining Operations</h4>
+                                        <p>Our mining fleet runs 24/7, connecting to top Bitcoin mining pools to participate in block validation and reward generation.</p>
+                                    </div>
+                                    
+                                    <div class="process-step" data-step="5">
+                                        <h4 class="mb-3">5. Earnings Tracking</h4>
+                                        <p>Access your dashboard to monitor hashrate performance, daily earnings, and cumulative returns in real-time.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="process-step" data-step="2">
+                                        <h4 class="mb-3">2. Hashrate Purchase</h4>
+                                        <p>Choose from our hashrate packages (starting at 10 TH/s) and complete your purchase through our secure platform.</p>
+                                    </div>
+                                    
+                                    <div class="process-step" data-step="4">
+                                        <h4 class="mb-3">4. Daily Payouts</h4>
+                                        <p>Earnings are calculated based on your hashrate share, converted to USDT, and deposited into your account daily.</p>
+                                    </div>
+                                    
+                                    <div class="process-step" data-step="6">
+                                        <h4 class="mb-3">6. Withdraw or Reinvest</h4>
+                                        <p>Withdraw your earnings to your wallet or reinvest in additional hashrate to compound your returns.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Participation Requirements -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">Cloud Mining Requirements</h2>
+                            <p>Participating in Coinmint's cloud mining is accessible to a wide range of investors. Here's what you need to get started:</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <i class="fa fa-money"></i>
+                                    <h4 class="mt-2">Minimum Investment</h4>
+                                    <p>Start with as little as $1,000 to purchase your first hashrate package, making it accessible for retail and institutional investors.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-brain"></i>
+                                    <h4 class="mt-2">Basic Crypto Knowledge</h4>
+                                    <p>Understand fundamental concepts like Bitcoin mining, hashrate, and blockchain to make informed investment decisions.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-shield"></i>
+                                    <h4 class="mt-2">Platform Due Diligence</h4>
+                                    <p>Choose a reputable provider with physical infrastructure, transparent operations, and reasonable fee structures—like Coinmint.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-clock-o"></i>
+                                    <h4 class="mt-2">Long-Term Perspective</h4>
+                                    <p>Mining is a long-term strategy. Avoid treating it as a short-term arbitrage tool to maximize returns.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Benefits of Cloud Mining -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">Benefits of Cloud Mining with Coinmint</h2>
+                            <p>Our cloud mining solutions offer distinct advantages for investors seeking passive income from Bitcoin mining:</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-4"><i class="fa fa-money mr-3"></i>Passive Digital Income</h4>
+                                    <p>Earn daily BTC or USDT without needing to manage hardware, providing a consistent digital cash flow.</p>
+                                    
+                                    <h4 class="text-primary mt-5 mb-4"><i class="fa fa-unlock-alt mr-3"></i>Low Barrier to Entry</h4>
+                                    <p>No need to buy expensive mining equipment, set up infrastructure, or learn technical skills—we handle it all.</p>
+                                    
+                                    <h4 class="text-primary mt-5 mb-4"><i class="fa fa-home mr-3"></i>No Physical Hassles</h4>
+                                    <p>Avoid noise, heat, and high electricity bills from home mining setups—our facilities are optimized for efficiency.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="text-primary mb-4"><i class="fa fa-puzzle-piece mr-3"></i>Diversified Asset Allocation</h4>
+                                    <p>Add a blockchain infrastructure component to your portfolio, independent of cryptocurrency price volatility.</p>
+                                    
+                                    <h4 class="text-primary mt-5 mb-4"><i class="fa fa-eye mr-3"></i>Transparent Earnings</h4>
+                                    <p>Track your hashrate, earnings, and expenses in real-time through our intuitive dashboard.</p>
+                                    
+                                    <h4 class="text-primary mt-5 mb-4"><i class="fa fa-leaf mr-3"></i>Sustainable Mining</h4>
+                                    <p>Our 100% hydroelectric power ensures your mining is environmentally responsible and future-proof.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Cloud Mining Value -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">The Value Proposition of Cloud Mining</h2>
+                            <p>Cloud mining with Coinmint offers more than just passive income—it's a strategic way to participate in the blockchain ecosystem:</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <i class="fa fa-line-chart"></i>
+                                    <h4 class="mt-2">Output-Based Returns</h4>
+                                    <p>Earnings are rooted in real Bitcoin block rewards, not platform subsidies, providing a transparent income structure.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-search"></i>
+                                    <h4 class="mt-2">On-Chain Traceability</h4>
+                                    <p>Verify your earnings against public mining pool data, ensuring transparency and trust in our system.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-sliders"></i>
+                                    <h4 class="mt-2">Flexible Investment</h4>
+                                    <p>Start small and scale up as you gain confidence, with no requirement for large upfront capital.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fa fa-users"></i>
+                                    <h4 class="mt-2">Ecosystem Participation</h4>
+                                    <p>Contribute to Bitcoin network security and operation, playing an active role in the blockchain ecosystem.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Target User Groups -->
+                        <section class="mb-8">
+                            <h2 class="section-title text-2xl font-bold mb-5">Who Benefits from Cloud Mining?</h2>
+                            <p>Cloud mining is suitable for a diverse range of investors, from individuals to institutions:</p>
+                            
+                            <div class="user-group">
+                                <h4 class="font-bold mb-2"><i class="fa fa-user mr-3 text-primary"></i>Beginner Investors</h4>
+                                <p>Those new to cryptocurrency who want to start with a low-risk, low-effort introduction to Bitcoin mining.</p>
+                            </div>
+                            
+                            <div class="user-group">
+                                <h4 class="font-bold mb-2"><i class="fa fa-briefcase mr-3 text-primary"></i>Busy Professionals</h4>
+                                <p>Individuals with limited time who want to earn passive income without managing technical details.</p>
+                            </div>
+                            
+                            <div class="user-group">
+                                <h4 class="font-bold mb-2"><i class="fa fa-handshake-o mr-3 text-primary"></i>Financial Advisors</h4>
+                                <p>Professionals looking for alternative investments to diversify client portfolios with digital infrastructure assets.</p>
+                            </div>
+                            
+                            <div class="user-group">
+                                <h4 class="font-bold mb-2"><i class="fa fa-building mr-3 text-primary"></i>Institutional Investors</h4>
+                                <p>Funds and organizations seeking scalable, compliant exposure to Bitcoin mining with ESG considerations.</p>
+                            </div>
+                            
+                            <div class="user-group">
+                                <h4 class="font-bold mb-2"><i class="fa fa-graduation-cap mr-3 text-primary"></i>Blockchain Enthusiasts</h4>
+                                <p>Individuals who believe in Bitcoin's future and want to participate in its infrastructure growth.</p>
+                            </div>
+                        </section>
+
+                        <!-- CTA Section -->
+                        <section class="mt-10 text-center">
+                            <div class="bg-primary/5 p-5 rounded-xl">
+                                <h3 class="text-2xl font-bold mb-4">Start Earning Passive Income with Cloud Mining</h3>
+                                <p class="text-lg mb-6 max-w-2xl mx-auto">Join thousands of investors who are earning daily from Bitcoin mining without the hassle of hardware management. Our cloud mining solutions are designed for simplicity, transparency, and sustainability.</p>
+                                <a href="https://direct.lc.chat/19126558/" class="btn btn-primary px-6 py-3 text-lg font-medium">Explore Hashrate Packages</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="footer-row row">
+                <div class="col-md-3">
+                    <div class="footer-logo">
+                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" />
+                    </div>
+                    <p>Coinmint is a leading provider of cloud mining solutions, enabling passive income from Bitcoin mining with clean energy and transparent operations.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href='index-2.html'>Home</a></li>
+                        <li><a href='index932e932e932e.html?pages_44/'>About Us</a></li>
+                        <li><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Solutions</a></li>
+                        <li><a href='index7db57db57db5.html?list_39/'>Company History</a></li>
+                        <li><a href='index7f127f127f12.html?ronghe/'>Mining Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Contact Information</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-map-marker mr-2"></i> Marseille, New York</li>
+                        <li><i class="fa fa-envelope mr-2"></i> coinmintcc@gmail.com</li>
+                        <li><i class="fa fa-phone mr-2"></i> +1 (888) 123-4567</li>
+                    </ul>
+                    <!-- 已删除社交图标代码 -->
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to our newsletter for cloud mining insights and special offers.</p>
+                        <form>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">Subscribe</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center mt-4 pt-4 border-t">
+                <span>© 2024 Energy & Compute LLC，dba Coinmint. All rights reserved.</span>
+                <span class="mx-3">|</span>
+                <span><a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">Regulatory Info</a></span>
+                <span class="mx-3">|</span>
+                <span><a href="index.php/sitemap.xml" target="_blank">Sitemap</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div id="toolbar2">
+        <li><a href='index-2.html'><span class="icon-home"></span>Home</a></li>
+        <li><a href="tel:coinmintcc@gmail.com"><span class="icon-phone"></span>Call</a></li>
+        <li><a href="sms:coinmintcc@gmail.com"><span class="icon-envelope"></span>SMS</a></li>
+        <li><a href="https://direct.lc.chat/19126558/"><span class="icon-user"></span>Contact</a></li>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        $(function() {
+            new WOW().init();
+
+            // Hashrate Distribution Chart
+            const ctx = document.getElementById('hashrateChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Antminer S19XP', 'Antminer S21', 'Other Models'],
+                    datasets: [{
+                        data: [60, 30, 10],
+                        backgroundColor: [
+                            '#3B82F6',
+                            '#10B981',
+                            '#94A3B8'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Smooth scroll
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top - 30
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+<!-- Mirrored from coinmint.net/bb.coinmint.cc/index5b67?rh1/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:37 GMT -->
+
+<!-- Mirrored from coinmint.net/index5b675b67?rh1/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
+</html>

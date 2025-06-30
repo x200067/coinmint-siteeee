@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from bb.coinmint.cc/?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jun 2025 00:49:27 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from coinmint.net/bb.coinmint.cc/indexbe3e?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:36 GMT -->
+<!-- Added by HTTrack -->
+<!-- Mirrored from coinmint.net/indexbe3ebe3e?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Origin of Coinmint | From Abandoned Factory to Global Mining Hub</title>
+<meta name="keywords" content="Coinmint origin story, Bitcoin mining facility, New York mining center, clean energy mining, blockchain history">
+<meta name="description" content="Trace the journey of Coinmint from transforming an abandoned Alcoa factory in New York into a global Bitcoin mining hub powered by clean energy since 2015.">
+<link href="skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="skin/css/style.css" rel="stylesheet">
+<script src="skin/js/jquery.min.js"></script>
+<script src="skin/js/bootstrap.min.js"></script>
+<script src="skin/js/touchslide.1.1.js"></script>
+<script src="skin/js/common.js"></script>
+<link href="skin/css/animate.min.css" rel="stylesheet">
+<script src="skin/js/wow.min.js"></script>
+<link href="cdn.jsdelivr.net/npm/font-awesome%404.7.0/css/font-awesome.min.html" rel="stylesheet">
+<style>
+:root {
+    --primary: #165DFF;
+    --secondary: #36D399;
+    --accent: #FF6B6B;
+    --dark: #1E293B;
+    --light: #F8FAFC;
+    --gray: #94A3B8;
+}
+
+/* ======================================
+   时间线终极重构（解决所有挤压问题）
+====================================== */
+.narrative-timeline {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden; /* 防止动画溢出 */
+}
+
+/* 中间轴线（渐变效果） */
+.timeline-axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* 容器：控制最大宽度 + 居中 */
+.timeline-container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* 时间线项：统一卡片样式 */
+.timeline-item {
+    position: relative;
+    width: calc(50% - 80px); /* 50%宽度 - 间距 */
+    margin: 40px 0;
+    padding: 25px;
+    background: var(--light);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    word-wrap: break-word; /* 强制换行，解决长词挤压 */
+    z-index: 1;
+}
+
+/* 奇数项（左）：右对齐 + 右侧间距 */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    margin-left: 40px;
+    text-align: right;
+    animation-delay: 0.2s; /* 动画延迟区分 */
+}
+
+/* 偶数项（右）：左对齐 + 左侧间距 */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    margin-left: 40px;
+    text-align: left;
+    animation-delay: 0.4s; /* 动画延迟区分 */
+}
+
+/* 时间点标记（气泡） */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 25px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid var(--primary);
+    z-index: 2;
+}
+
+/* 奇数项的时间点：居右 */
+.timeline-item:nth-child(odd)::before {
+    right: -10px;
+}
+
+/* 偶数项的时间点：居左 */
+.timeline-item:nth-child(even)::before {
+    left: -10px;
+}
+
+/* 年份标题 */
+.timeline-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* 子标题 */
+.timeline-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+/* 图片自适应 */
+.timeline-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: block; /* 消除底部间隙 */
+    transition: transform 0.3s;
+}
+
+/* 悬停效果 */
+.timeline-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.timeline-item:hover .timeline-image {
+    transform: scale(1.03);
+}
+
+/* 响应式适配（移动端堆叠） */
+@media (max-width: 992px) {
+    .timeline-axis {
+        left: 40px; /* 轴线居左 */
+    }
+    .timeline-item {
+        width: calc(100% - 120px); /* 全屏宽度 - 间距 */
+        left: 0 !important; /* 覆盖奇偶项定位 */
+        margin: 40px 0 60px 80px; /* 留出轴线空间 */
+        text-align: left !important; /* 统一左对齐 */
+    }
+    .timeline-item::before {
+        left: -10px !important; /* 时间点统一居左 */
+    }
+}
+
+/* 页脚样式（保持之前的颜色修改） */
+#footer {
+    background-color: #0F172A; /* 深蓝色背景 */
+    color: #E2E8F0; /* 浅灰色文字 */
+}
+
+#footer a {
+    color: #94A3B8; /* 链接颜色 */
+}
+
+#footer a:hover {
+    color: #64748B; /* 悬停链接颜色 */
+}
+
+#footer .footer_con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+#footer .footer_con span {
+    display: block;
+    min-width: 180px; /* 增加最小宽度确保文字不溢出 */
+    word-break: break-all; /* 允许单词换行 */
+}
+
+#footer .foot-flink {
+    width: 100%; /* 友情链接占满宽度 */
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<!--Header Start--> 
+<nav id="cd-lateral-nav">
+  <ul class="cd-navigation">
+    <li><a href='index-2.html'>Home</a></li>
+    
+    <li class="item-has-children"><a href='index932e932e932e.html?pages_44/'>About Us</a>
+      
+      <ul class='sub-menu'>
+        
+        <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='About Coinmint'>About Coinmint</a></li>
+        
+        <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+        
+        <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Chief Executive Officer'>Executive Team</a></li>
+        
+        <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='human Resources'>Human Resources</a></li>
+        
+        <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='intellectual property'>Intellectual Property</a></li>
+        
+        <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
+        
+        <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Core Milestones'>Key Milestones</a></li>
+        
+      </ul>
+      
+    </li>
+    
+    <li class="item-has-children"><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Sectors</a>
+      
+      <ul class='sub-menu'>
+        
+        <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial mines'>Industrial Mining</a></li>
+        
+        <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining Machine'>Cloud Mining</a></li>
+        
+        <li><a href='index686e686e686e.html?xm3/' id='lsed' title='Trading Center'>Trading Center</a></li>
+        
+        <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
+        
+      </ul>
+      
+    </li>
+    
+    <li class="item-has-children"><a class='current' href='index7db57db57db5.html?list_39/'>Our History</a>
+      
+      <ul class='sub-menu'>
+        
+        <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='The Origin of Coinmint'>The Origin of Coinmint</a></li>
+        
+        <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG invests in coinmint'>NYDIG Investment</a></li>
+        
+      </ul>
+      
+    </li>
+    
+    <li class="item-has-children"><a href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
+      
+      <ul class='sub-menu'>
+        
+        <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud mining'>Cloud Mining</a></li>
+        
+        <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Mining machine hosting'>Miner Hosting</a></li>
+        
+        <li><a href='indexcd9ccd9ccd9c.html?rh5/' id='lsed' title='Host mining'>Hosted Mining</a></li>
+        
+        <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Mining machine income'>Miner Yield</a></li>
+        
+        <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why choose Coinmint?'>Why Coinmint</a></li>
+        
+      </ul>
+      
+    </li>
+    
+    <li ><a href='https://direct.lc.chat/19126558/' >Contact Us</a>
+      
+    </li>
+    
+    <li ><a href='https://pc.coinmint.cc/#/home' >Crypto Trading</a>
+      
+    </li>
+    
+    <li ><a href='https://www.nicehash.com/mining' >Hosted Mining Platform</a>
+      
+    </li>
+    
+  </ul>
+</nav>
+<header id="header">
+  <div class="container">
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div class="top_des"></div>
+    <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
+    <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a> </div>
+</header>
+<div class="clear"></div>
+<nav id="navigate">
+  <div class="container">
+    <ul>
+      <li class="first_menu"><a href='index-2.html'>Home</a></li>
+      
+      <li><a href='index932e932e932e.html?pages_44/'>About Us</a>
+        
+        <ul class='drop_menu'>
+          
+          <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='About Coinmint'>About Coinmint</a></li>
+          
+          <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
+          
+          <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Chief Executive Officer'>Executive Team</a></li>
+          
+          <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='human Resources'>Human Resources</a></li>
+          
+          <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='intellectual property'>Intellectual Property</a></li>
+          
+          <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
+          
+          <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Core Milestones'>Key Milestones</a></li>
+          
+        </ul>
+        
+      </li>
+      
+      <li><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Sectors</a>
+        
+        <ul class='drop_menu'>
+          
+          <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial mines'>Industrial Mining</a></li>
+          
+          <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining Machine'>Cloud Mining</a></li>
+          
+          <li><a href='index686e686e686e.html?xm3/' id='lsed' title='Trading Center'>Trading Center</a></li>
+          
+          <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
+          
+        </ul>
+        
+      </li>
+      
+      <li><a class='current' href='index7db57db57db5.html?list_39/'>Our History</a>
+        
+        <ul class='drop_menu'>
+          
+          <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='The Origin of Coinmint'>The Origin of Coinmint</a></li>
+          
+          <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG invests in coinmint'>NYDIG Investment</a></li>
+          
+        </ul>
+        
+      </li>
+      
+      <li><a href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
+        
+        <ul class='drop_menu'>
+          
+          <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud mining'>Cloud Mining</a></li>
+          
+          <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Mining machine hosting'>Miner Hosting</a></li>
+          
+          <li><a href='indexcd9ccd9ccd9c.html?rh5/' id='lsed' title='Host mining'>Hosted Mining</a></li>
+          
+          <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Mining machine income'>Miner Yield</a></li>
+          
+          <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why choose Coinmint?'>Why Coinmint</a></li>
+          
+        </ul>
+        
+      </li>
+      
+      <li><a  href='https://direct.lc.chat/19126558/'>Contact Us</a>
+        
+      </li>
+      
+      <li><a  href='https://pc.coinmint.cc/#/home'>Crypto Trading</a>
+        
+      </li>
+      
+      <li><a  href='https://www.nicehash.com/mining'>Hosted Mining Platform</a>
+        
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="clear"></div>
+<div class="cd-main-content">
+<div id="banner" style="background-image:url(static/upload/other/20250417/1744861854966853.jpg);" class="wow fadeIn"></div>
+<div class="clear"></div>
+<!--Content Area Start-->
+<div class="main">
+  <div class="container">
+    <div id="left">
+      <div class="left_list">
+        <div class="left_top">
+          <h3><a href='#'>Our History</a></h3>
+        </div>
+        <div class="left_con">
+          <div class="type_list">
+            <ul>
+              <li class="first_cat"><a class='current' href='indexbe3ebe3ebe3e.html?pages_41/' title='The Origin of Coinmint'>The Origin of Coinmint</a></li>
+              <li class="first_cat"><a href='index0bc00bc00bc0.html?pages_40/' title='NYDIG invests in coinmint'>NYDIG Investment</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="right_top" class="channel_top">
+        <h3><a href='indexbe3ebe3ebe3e.html?pages_41/'>The Origin of Coinmint</a></h3>
+        <span>Current position: <a href='index-2.html'>Home Page</a> > <a href='index7db57db57db5.html?list_39/'>Our History</a> > <a href='indexbe3ebe3ebe3e.html?pages_41/'>The Origin of Coinmint</a> </span> 
+      </div>
+      <div id="right_con" class="maximg">
+          <div class="row">
+              <div class="col-md-12">
+                  <h2 class="section-title text-2xl font-bold mb-6">From Abandoned Factory to Global Mining Hub</h2>
+                  <p class="lead mb-8">Trace the journey of how Coinmint transformed an abandoned industrial site in upstate New York into a pioneering blockchain infrastructure hub powered by clean energy.</p>
+                  
+                  <!-- Narrative Timeline（终极重构） -->
+                  <div class="narrative-timeline">
+                      <div class="timeline-axis"></div> <!-- 中间轴线 -->
+                      <div class="timeline-container">
+                          <!-- 2015 -->
+                          <div class="timeline-item wow fadeInLeft">
+                              <div class="timeline-year">2015</div>
+                              <h3 class="timeline-title">The Birth of a Vision</h3>
+                              <p>Despite Bitcoin price fluctuations in 2015, Coinmint committed $700 million to the project, believing in the long-term value of blockchain technology.</p>
+                              <img src="https://picsum.photos/600/300?random=1" alt="Abandoned Alcoa Factory" class="timeline-image">
+                          </div>
+                          
+                          <!-- 2016 -->
+                          <div class="timeline-item wow fadeInRight">
+                              <div class="timeline-year">2016</div>
+                              <h3 class="timeline-title">Infrastructure Development</h3>
+                              <p>The transformation began, facing the challenge of converting old industrial facilities into a high-tech computing center:</p>
+                              <ul>
+                                  <li>Upgraded power systems to support 435 MW of computing capacity</li>
+                                  <li>Designed efficient cooling systems leveraging the region's cold climate</li>
+                                  <li>Installed infrastructure for the first 100,000 ASIC miners</li>
+                              </ul>
+                              <img src="https://picsum.photos/600/300?random=2" alt="Infrastructure Construction" class="timeline-image">
+                              <p>The engineering team innovatively utilized the factory's structure to maximize miner deployment while maintaining energy efficiency.</p>
+                          </div>
+                          
+                          <!-- 2017 -->
+                          <div class="timeline-item wow fadeInLeft">
+                              <div class="timeline-year">2017</div>
+                              <h3 class="timeline-title">Clean Energy Strategy</h3>
+                              <p>Coinmint signed a long-term agreement with NYPA, securing 95% hydropower for its operations, establishing a clean energy mining strategy:</p>
+                              <ul>
+                                  <li>20-year hydropower purchase agreement for sustainable energy supply</li>
+                                  <li>Intelligent energy management system to optimize hash rate-to-energy ratio</li>
+                                  <li>One of the first large-scale mines to adopt 100% renewable energy</li>
+                              </ul>
+                              <img src="https://picsum.photos/600/300?random=3" alt="Clean Energy Integration" class="timeline-image">
+                              <p>This strategic choice established Coinmint as an industry leader in environmentally responsible mining.</p>
+                          </div>
+                          
+                          <!-- 2018 -->
+                          <div class="timeline-item wow fadeInRight">
+                              <div class="timeline-year">2018</div>
+                              <h3 class="timeline-title">Launch of a Global Mining Hub</h3>
+                              <p>Coinmint announced the completion of its 435 MW mining center, becoming the world's largest Bitcoin mining facility at the time:</p>
+                              <ul>
+                                  <li>First 50,000 miners deployed, achieving 1.2 EH/s hashing power</li>
+                                  <li>Created 150 local jobs, stimulating regional economic growth</li>
+                                  <li>Established industry-standard processes for miner operation and management</li>
+                              </ul>
+                              <img src="https://picsum.photos/600/300?random=4" alt="Mining Center Launch" class="timeline-image">
+                              <p>The Massena facility marked Coinmint's transformation from startup to a key player in blockchain infrastructure.</p>
+                          </div>
+                          
+                          <!-- 2019-Present -->
+                          <div class="timeline-item wow fadeInLeft">
+                              <div class="timeline-year">2019-Present</div>
+                              <h3 class="timeline-title">From Mining to Ecosystem</h3>
+                              <p>Building on the success of the Massena facility, Coinmint expanded its ecosystem:</p>
+                              <ul>
+                                  <li>2019: Launched cloud mining services to democratize access</li>
+                                  <li>2021: Completed $50M funding round to scale operations</li>
+                                  <li>2023: Launched trading platform, creating a "mining+trading" ecosystem</li>
+                              </ul>
+                              <img src="https://picsum.photos/600/300?random=5" alt="Ecosystem Development" class="timeline-image">
+                              <p>From an abandoned factory to a comprehensive ecosystem, Coinmint's journey reflects the evolution of blockchain infrastructure from niche to mainstream.</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- 其他模块（Key Metrics、Gallery等）保持不变... -->
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Content Area End-->
+</div>
+<div class="clear"></div>
+<div id="footer">
+  <div class="container">
+    <div class="footer_con wow fadeInLeft"> 
+        <span>© 2024 Energy & Compute LLC，dba Coinmint.　<a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow"></a> <a href="index.php/sitemap.xml" target="_blank"></a> <a href="http://www.jocat.cn/" target="_blank"></a></span>
+        <span>Address：Marseille, New York</span> 
+        <span>Phone：coinmintcc@gmail.com</span> 
+        <span>Email：coinmintcc@gmail.com</span> 
+        <span>Company Name：Coinmint</span>
+      <div class="foot-flink">Friendly Links：<a href="https://pc.coinmint.cc/#/home" target="_blank">Crypto Trading Center</a></div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<script>
+$(function(){
+    new WOW().init();
+    
+    function animateValue(id, start, end, duration) {
+        let element = $(id);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            let progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.text(Math.floor(progress * (end - start) + start) + "M");
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    
+    $(window).scroll(() => {
+        const scrollPos = $(window).scrollTop();
+        const investmentSection = $('.key-metrics').offset().top - 300;
+        
+        if (scrollPos > investmentSection && !$('#investment').data('animated')) {
+            animateValue('#investment', 0, 700, 2000);
+            $('#investment').data('animated', true);
+        }
+    });
+    
+    $("#gotop").click(function(){
+        $("html,body").animate({scrollTop:0});
+    });
+});
+</script> 
+<div class="blank55"></div>
+<div id="toolbar2">
+  <li><a href='index-2.html'><span class="icon-home"></span>Home</a></li>
+  <li><a href="tel:coinmintcc@gmail.com"><span class="icon-phone"></span>Call</a></li>
+  <li><a href="sms:coinmintcc@gmail.com"><span class="icon-envelope"></span>SMS</a></li>
+  <li><a href="https://direct.lc.chat/19126558/"><span class="icon-user"></span>Contact</a></li>
+</div>
+ 
+</body>
+
+<!-- Mirrored from bb.coinmint.cc/?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jun 2025 00:49:27 GMT -->
+
+<!-- Mirrored from coinmint.net/bb.coinmint.cc/indexbe3e?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:36 GMT -->
+
+<!-- Mirrored from coinmint.net/indexbe3ebe3e?pages_41/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
+</html>
