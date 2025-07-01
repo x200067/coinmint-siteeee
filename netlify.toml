@@ -1,8 +1,16 @@
+# 1. 放行 config.yml 本身，不要重写它
+[[redirects]]
+  from = "/admin/config.yml"
+  to   = "/admin/config.yml"
+  status = 200
+
+# 2. 访问 /admin 或 /admin/ 时重写到 index.html
 [[redirects]]
   from = "/admin"
   to   = "/admin/index.html"
   status = 200
 
+# 3. 访问 /admin/xxx（除了 config.yml）时都重写到 index.html
 [[redirects]]
   from = "/admin/*"
   to   = "/admin/index.html"
