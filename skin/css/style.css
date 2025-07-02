@@ -25,9 +25,34 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	margin: 0px;
 	padding: 0px;
-	font-size: 14px;
-	color: #222;
-	font-family: "微软雅黑", Arial, Helvetica, sans-serif, "宋体";
+	font-size: 16px;
+	color: #333;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "微软雅黑", "宋体";
+	line-height: 1.6;
+	scroll-behavior: smooth;
+}
+
+/* Global page transitions */
+.cd-main-content {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Improved container spacing */
+.container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
 	background: #fff;
 }
 ul, li {
@@ -207,13 +232,31 @@ input, select {
 	font-size: 16px;
 	color: #fff;
 	padding: 0 40px;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
 }
 #navigate ul li:last-child {
 	margin-right: -13px;
 }
 #navigate ul li a:hover, #navigate ul li .current, #navigate ul li:hover a {
 	color: #fff;
-	background: #0158C2;
+	background: linear-gradient(135deg, #0158C2 0%, #165DFF 100%);
+	transform: translateY(-2px);
+}
+#navigate ul li a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 3px;
+	background: #36D399;
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+}
+#navigate ul li a:hover::before, #navigate ul li .current::before {
+	width: 80%;
 }
 #navigate ul li .drop_menu {
 	width: 145px;
@@ -256,7 +299,7 @@ input, select {
 #banner {
 	width: 100%;
 	float: left;
-	height: 397px;
+	height: 450px;
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
 	background-position: center !important;
@@ -268,11 +311,14 @@ input, select {
 #flash {
 	width: 100%;
 	float: left;
+	margin-bottom: 30px;
 }
 .slideBox {
 	position: relative;
 	overflow: hidden;
-	background: #000;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 .slideBox .bd {
 	position: relative;
@@ -282,9 +328,16 @@ input, select {
 .slideBox .bd li {
 	position: relative;
 	text-align: center;
+	transition: all 0.5s ease-in-out;
 }
 .slideBox .bd li img {
 	width: 100%;
+	height: 450px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+.slideBox .bd li:hover img {
+	transform: scale(1.02);
 }
 .slideBox .bd li .flash_img {
 	width: 100%;
@@ -347,7 +400,64 @@ input, select {
 .slideBox:hover .prev, .slideBox:hover .next {
 	display: block;
 }
+
+/* Slide Text Overlay */
+.slide-text {
+	position: absolute;
+	bottom: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: white;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 25px 40px;
+	border-radius: 12px;
+	backdrop-filter: blur(10px);
+	max-width: 600px;
+	width: 90%;
+	transition: all 0.3s ease;
+}
+
+.slide-text h2 {
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	line-height: 1.3;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-text p {
+	font-size: 16px;
+	margin: 0;
+	opacity: 0.9;
+	line-height: 1.5;
+}
+
+.slideBox .bd li:hover .slide-text {
+	transform: translateX(-50%) translateY(-10px);
+	background: rgba(0, 0, 0, 0.8);
+}
+
 /*end*/
+
+/* Mobile Flash Styles */
+#mobileflash {
+	display: none;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#mobileflash .slideBox {
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#mobileflash .slideBox .bd li img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
 
 /* 服务项目 */
 #service {
@@ -874,18 +984,25 @@ input, select {
 	float: left;
 	width: 20%;
 	text-align: center;
-	margin-bottom: 40px;
-	padding: 0 15px;
+	margin-bottom: 45px;
+	padding: 0 20px;
+	transition: all 0.3s ease;
+}
+.pro_list:hover {
+	transform: translateY(-5px);
 }
 .pro_list_box {
 	float: left;
 	width: 100%;
-	box-shadow: 0 0 1px #ccc;
-	padding: 10px;
-	transition: all .3s ease;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+	padding: 20px;
+	transition: all .4s ease;
+	border-radius: 12px;
+	background: #fff;
 }
 .pro_list_box:hover {
-	box-shadow: 0 0 7px #ccc;
+	box-shadow: 0 8px 30px rgba(22, 93, 255, 0.15);
+	transform: translateY(-3px);
 }
 .pro_list_img {
 	float: left;
