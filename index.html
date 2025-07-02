@@ -28,22 +28,43 @@
 <!--<![endif]-->
 <style>
 /* 新增样式：轮播图文本、服务项目悬停效果、社交媒体样式 */
+.slideBox .bd li {
+  position: relative;
+}
+.slideBox .bd li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%);
+  z-index: 5;
+}
 .slide-text {
   position: absolute;
-  bottom: 30px;
-  left: 50px;
+  bottom: 40px;
+  left: 60px;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  max-width: 400px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.7);
+  max-width: 500px;
   z-index: 10;
+  background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 100%);
+  padding: 20px 30px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 .slide-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   animation: fadeInUp 1s;
 }
 .slide-text p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  opacity: 0.95;
   animation: fadeInUp 1s 0.3s both;
 }
 
@@ -129,10 +150,17 @@
   .slide-text {
     left: 20px;
     bottom: 20px;
+    max-width: calc(100% - 40px);
+    padding: 15px 20px;
   }
   .slide-text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
+  .slide-text p {
+    font-size: 1.1rem;
+  }
+}
   .service_item_img {
     height: 150px !important;
   }
@@ -511,24 +539,24 @@
     <div class="bd">
       <ul>
         <li>
-          <a href='index82b382b382b3.html?xm1/'><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center" alt="Industrial Mining Facilities" />
+          <a href='index82b382b382b3.html?xm1/'><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Digital Technology Infrastructure" />
           <div class="slide-text">
-            <h2>Global Leading Mining Infrastructure</h2>
-            <p>100,000+ high-performance miners with enterprise-grade management</p>
+            <h2>Advanced Mining Technology</h2>
+            <p>State-of-the-art infrastructure with cutting-edge blockchain solutions</p>
           </div></a>
         </li>
         <li>
-          <a href='index074d074d074d.html?xm2/'><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center" alt="Cloud Mining Service" />
+          <a href='index074d074d074d.html?xm2/'><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Professional Business Solutions" />
           <div class="slide-text">
-            <h2>Cloud Mining Solutions</h2>
-            <p>Access blockchain mining without hardware investment</p>
+            <h2>Professional Mining Services</h2>
+            <p>Comprehensive solutions for institutional and individual investors</p>
           </div></a>
         </li>
         <li>
-          <a href='index4c5f4c5f4c5f.html?xm4/'><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center" alt="Clean Energy Initiative" />
+          <a href='index4c5f4c5f4c5f.html?xm4/'><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Modern Business Environment" />
           <div class="slide-text">
-            <h2>100% Clean Energy</h2>
-            <p>Sustainable mining powered by renewable energy sources</p>
+            <h2>Sustainable Operations</h2>
+            <p>Eco-friendly mining with renewable energy and efficient management</p>
           </div></a>
         </li>
       </ul>
@@ -546,8 +574,8 @@
   <div id="adBox" class="slideBox">
     <div class="bd">
       <ul>
-        <li><a href="#" title="Mobile Banner"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center" /></a></li>
-        <li><a href='pc.html' title><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center" /></a></li>
+        <li><a href="#" title="Mobile Banner"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center&auto=format&q=80" /></a></li>
+        <li><a href='pc.html' title><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center&auto=format&q=80" /></a></li>
       </ul>
     </div>
     <div class="hd">
