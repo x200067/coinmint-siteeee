@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员访问 - Coinmint</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .access-links {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .access-link {
+            display: block;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .access-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        .access-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .access-link:hover::before {
+            left: 100%;
+        }
+        .icon {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .warning {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 15px;
+            color: #c53030;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .info {
+            background: #f0fff4;
+            border: 1px solid #c6f6d5;
+            border-radius: 8px;
+            padding: 15px;
+            color: #2f855a;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">CM</div>
+        <h1>🔐 管理员访问</h1>
+        <p class="subtitle">选择编辑模式访问网站管理功能</p>
+        
+        <div class="access-links">
+            <a href="index.html?admin=true" class="access-link">
+                <span class="icon">🎨</span>
+                可视化编辑模式
+            </a>
+            
+            <a href="index.html?edit=true" class="access-link">
+                <span class="icon">✏️</span>
+                快速编辑模式
+            </a>
+            
+            <a href="admin/index.html" class="access-link">
+                <span class="icon">⚙️</span>
+                管理面板
+            </a>
+            
+            <a href="admin/editor-hub.html" class="access-link">
+                <span class="icon">🚀</span>
+                编辑器中心
+            </a>
+        </div>
+        
+        <div class="info">
+            💡 <strong>使用说明:</strong><br>
+            • 可视化编辑: 直接在网站上点击文字编辑<br>
+            • 快速编辑: 简化的编辑界面<br>
+            • 管理面板: 完整的后台管理功能
+        </div>
+        
+        <div class="warning">
+            ⚠️ <strong>注意:</strong> 此页面仅供管理员使用，请勿分享给客户
+        </div>
+        
+        <p style="margin-top: 30px; color: #718096; font-size: 12px;">
+            <a href="index.html" style="color: #667eea; text-decoration: none;">← 返回客户网站</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部署诊断工具 - CoinMint</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .diagnostic-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            background: #f9fafb;
+        }
+
+        .diagnostic-section h3 {
+            color: #374151;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #e5e7eb;
+        }
+
+        .status-item.success {
+            border-left-color: #10b981;
+        }
+
+        .status-item.error {
+            border-left-color: #ef4444;
+        }
+
+        .status-item.warning {
+            border-left-color: #f59e0b;
+        }
+
+        .status-icon {
+            font-size: 1.2em;
+            margin-right: 10px;
+            width: 25px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn.secondary {
+            background: #6b7280;
+        }
+
+        .config-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .help-text {
+            font-size: 0.9em;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .test-results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 10px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 部署诊断工具</h1>
+            <p>检测和解决一键部署编辑器的问题</p>
+        </div>
+
+        <div class="content">
+            <!-- 当前状态检查 -->
+            <div class="diagnostic-section">
+                <h3>📊 当前状态检查</h3>
+                <div id="status-checks">
+                    <div class="status-item" id="config-status">
+                        <span class="status-icon">⏳</span>
+                        <span>正在检查配置...</span>
+                    </div>
+                    <div class="status-item" id="github-status">
+                        <span class="status-icon">⏳</span>
+                        <span>正在检查GitHub连接...</span>
+                    </div>
+                    <div class="status-item" id="netlify-status">
+                        <span class="status-icon">⏳</span>
+                        <span>正在检查Netlify连接...</span>
+                    </div>
+                </div>
+                <button class="btn" onclick="runDiagnostics()">🔄 重新检查</button>
+            </div>
+
+            <!-- 配置管理 -->
+            <div class="diagnostic-section">
+                <h3>⚙️ 配置管理</h3>
+                <button class="btn" onclick="showConfig()">📝 查看/编辑配置</button>
+                <button class="btn secondary" onclick="clearConfig()">🗑️ 清除配置</button>
+                <button class="btn secondary" onclick="exportConfig()">📤 导出配置</button>
+                <button class="btn secondary" onclick="importConfig()">📥 导入配置</button>
+                
+                <div id="config-form" class="config-form hidden">
+                    <h4>部署配置</h4>
+                    <div class="form-group">
+                        <label>GitHub Token:</label>
+                        <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxx">
+                        <div class="help-text">在GitHub Settings > Developer settings > Personal access tokens生成</div>
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub用户名:</label>
+                        <input type="text" id="github-owner" placeholder="your-username">
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub仓库名:</label>
+                        <input type="text" id="github-repo" placeholder="your-repo-name">
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub分支:</label>
+                        <input type="text" id="github-branch" placeholder="main" value="main">
+                    </div>
+                    <div class="form-group">
+                        <label>Netlify Token (可选):</label>
+                        <input type="password" id="netlify-token" placeholder="nfp_xxxxxxxxxxxx">
+                    </div>
+                    <div class="form-group">
+                        <label>Netlify Site ID (可选):</label>
+                        <input type="text" id="netlify-site-id" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+                    </div>
+                    <button class="btn" onclick="saveConfig()">💾 保存配置</button>
+                    <button class="btn secondary" onclick="testConfig()">🧪 测试配置</button>
+                </div>
+            </div>
+
+            <!-- 测试结果 -->
+            <div id="test-results" class="test-results hidden">
+                <h4>🧪 测试结果</h4>
+                <div id="test-output"></div>
+            </div>
+
+            <!-- 常见问题 -->
+            <div class="diagnostic-section">
+                <h3>❓ 常见问题解决</h3>
+                <div class="status-item">
+                    <span class="status-icon">🔑</span>
+                    <div>
+                        <strong>Token权限问题:</strong><br>
+                        确保GitHub Token有repo权限，Netlify Token有site:write权限
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">🌐</span>
+                    <div>
+                        <strong>网络连接问题:</strong><br>
+                        检查网络连接，确保可以访问GitHub和Netlify API
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">📝</span>
+                    <div>
+                        <strong>配置错误:</strong><br>
+                        检查仓库名称、分支名称、Site ID是否正确
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span class="status-icon">⏰</span>
+                    <div>
+                        <strong>Token过期:</strong><br>
+                        重新生成Token并更新配置
+                    </div>
+                </div>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn" onclick="window.location.href='../index.html'">🏠 返回主页</button>
+                <button class="btn secondary" onclick="window.location.href='one-click-editor.html'">✏️ 打开编辑器</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 从localStorage获取配置
+        function getConfig() {
+            const config = localStorage.getItem('oneclick-deploy-config');
+            return config ? JSON.parse(config) : {};
+        }
+
+        // 保存配置到localStorage
+        function saveConfigToStorage(config) {
+            localStorage.setItem('oneclick-deploy-config', JSON.stringify(config));
+        }
+
+        // 运行诊断
+        async function runDiagnostics() {
+            const config = getConfig();
+            
+            // 检查配置
+            checkConfig(config);
+            
+            // 检查GitHub连接
+            await checkGitHubConnection(config);
+            
+            // 检查Netlify连接
+            await checkNetlifyConnection(config);
+        }
+
+        // 检查配置
+        function checkConfig(config) {
+            const statusEl = document.getElementById('config-status');
+            
+            if (!config.githubToken && !config.netlifyToken) {
+                updateStatus(statusEl, 'error', '❌', '未配置任何部署方式');
+            } else if (config.githubToken && config.githubOwner && config.githubRepo) {
+                updateStatus(statusEl, 'success', '✅', 'GitHub配置完整');
+            } else if (config.netlifyToken && config.siteId) {
+                updateStatus(statusEl, 'success', '✅', 'Netlify配置完整');
+            } else {
+                updateStatus(statusEl, 'warning', '⚠️', '配置不完整');
+            }
+        }
+
+        // 检查GitHub连接
+        async function checkGitHubConnection(config) {
+            const statusEl = document.getElementById('github-status');
+            
+            if (!config.githubToken) {
+                updateStatus(statusEl, 'warning', '⚠️', 'GitHub未配置');
+                return;
+            }
+            
+            try {
+                const response = await fetch('https://api.github.com/user', {
+                    headers: {
+                        'Authorization': `token ${config.githubToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const user = await response.json();
+                    updateStatus(statusEl, 'success', '✅', `GitHub连接成功 (${user.login})`);
+                } else {
+                    updateStatus(statusEl, 'error', '❌', `GitHub连接失败: ${response.status}`);
+                }
+            } catch (error) {
+                updateStatus(statusEl, 'error', '❌', `GitHub连接错误: ${error.message}`);
+            }
+        }
+
+        // 检查Netlify连接
+        async function checkNetlifyConnection(config) {
+            const statusEl = document.getElementById('netlify-status');
+            
+            if (!config.netlifyToken) {
+                updateStatus(statusEl, 'warning', '⚠️', 'Netlify未配置');
+                return;
+            }
+            
+            try {
+                const response = await fetch('https://api.netlify.com/api/v1/user', {
+                    headers: {
+                        'Authorization': `Bearer ${config.netlifyToken}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const user = await response.json();
+                    updateStatus(statusEl, 'success', '✅', `Netlify连接成功 (${user.email})`);
+                } else {
+                    updateStatus(statusEl, 'error', '❌', `Netlify连接失败: ${response.status}`);
+                }
+            } catch (error) {
+                updateStatus(statusEl, 'error', '❌', `Netlify连接错误: ${error.message}`);
+            }
+        }
+
+        // 更新状态显示
+        function updateStatus(element, type, icon, text) {
+            element.className = `status-item ${type}`;
+            element.innerHTML = `<span class="status-icon">${icon}</span><span>${text}</span>`;
+        }
+
+        // 显示配置表单
+        function showConfig() {
+            const form = document.getElementById('config-form');
+            const config = getConfig();
+            
+            // 填充表单
+            document.getElementById('github-token').value = config.githubToken || '';
+            document.getElementById('github-owner').value = config.githubOwner || '';
+            document.getElementById('github-repo').value = config.githubRepo || '';
+            document.getElementById('github-branch').value = config.githubBranch || 'main';
+            document.getElementById('netlify-token').value = config.netlifyToken || '';
+            document.getElementById('netlify-site-id').value = config.siteId || '';
+            
+            form.classList.toggle('hidden');
+        }
+
+        // 保存配置
+        function saveConfig() {
+            const config = {
+                githubToken: document.getElementById('github-token').value,
+                githubOwner: document.getElementById('github-owner').value,
+                githubRepo: document.getElementById('github-repo').value,
+                githubBranch: document.getElementById('github-branch').value || 'main',
+                netlifyToken: document.getElementById('netlify-token').value,
+                siteId: document.getElementById('netlify-site-id').value
+            };
+            
+            saveConfigToStorage(config);
+            alert('配置已保存！');
+            runDiagnostics();
+        }
+
+        // 测试配置
+        async function testConfig() {
+            const resultsEl = document.getElementById('test-results');
+            const outputEl = document.getElementById('test-output');
+            
+            resultsEl.classList.remove('hidden');
+            outputEl.innerHTML = '<div class="loading"></div> 正在测试配置...';
+            
+            const config = {
+                githubToken: document.getElementById('github-token').value,
+                githubOwner: document.getElementById('github-owner').value,
+                githubRepo: document.getElementById('github-repo').value,
+                githubBranch: document.getElementById('github-branch').value || 'main',
+                netlifyToken: document.getElementById('netlify-token').value,
+                siteId: document.getElementById('netlify-site-id').value
+            };
+            
+            let results = [];
+            
+            // 测试GitHub
+            if (config.githubToken) {
+                try {
+                    const response = await fetch('https://api.github.com/user', {
+                        headers: {
+                            'Authorization': `token ${config.githubToken}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        results.push('✅ GitHub Token有效');
+                        
+                        // 测试仓库访问
+                        if (config.githubOwner && config.githubRepo) {
+                            const repoResponse = await fetch(`https://api.github.com/repos/${config.githubOwner}/${config.githubRepo}`, {
+                                headers: {
+                                    'Authorization': `token ${config.githubToken}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            });
+                            
+                            if (repoResponse.ok) {
+                                results.push('✅ 仓库访问正常');
+                            } else {
+                                results.push('❌ 仓库访问失败');
+                            }
+                        }
+                    } else {
+                        results.push('❌ GitHub Token无效');
+                    }
+                } catch (error) {
+                    results.push(`❌ GitHub测试失败: ${error.message}`);
+                }
+            }
+            
+            // 测试Netlify
+            if (config.netlifyToken) {
+                try {
+                    const response = await fetch('https://api.netlify.com/api/v1/user', {
+                        headers: {
+                            'Authorization': `Bearer ${config.netlifyToken}`
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        results.push('✅ Netlify Token有效');
+                    } else {
+                        results.push('❌ Netlify Token无效');
+                    }
+                } catch (error) {
+                    results.push(`❌ Netlify测试失败: ${error.message}`);
+                }
+            }
+            
+            outputEl.innerHTML = results.join('<br>');
+        }
+
+        // 清除配置
+        function clearConfig() {
+            if (confirm('确定要清除所有配置吗？')) {
+                localStorage.removeItem('oneclick-deploy-config');
+                alert('配置已清除！');
+                runDiagnostics();
+            }
+        }
+
+        // 导出配置
+        function exportConfig() {
+            const config = getConfig();
+            const dataStr = JSON.stringify(config, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'deploy-config.json';
+            link.click();
+        }
+
+        // 导入配置
+        function importConfig() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const config = JSON.parse(e.target.result);
+                            saveConfigToStorage(config);
+                            alert('配置导入成功！');
+                            runDiagnostics();
+                        } catch (error) {
+                            alert('配置文件格式错误！');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            input.click();
+        }
+
+        // 页面加载时运行诊断
+        document.addEventListener('DOMContentLoaded', runDiagnostics);
+    </script>
+</body>
+</html>

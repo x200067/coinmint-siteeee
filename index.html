@@ -183,10 +183,19 @@
 <!-- 管理面板配置读取器 -->
 <script src="admin/config-reader.js"></script>
 
-<!-- 全局可视化编辑器激活器 -->
+<!-- 全局可视化编辑器激活器 (仅管理员可见) -->
 <script>
-// 添加编辑器激活按钮
+// 添加编辑器激活按钮 (仅在特殊URL参数时显示)
 (function() {
+    // 检查是否为管理员模式
+    const urlParams = new URLSearchParams(window.location.search);
+    const adminMode = urlParams.get('admin') === 'true' || urlParams.get('edit') === 'true';
+
+    // 只有管理员模式才显示编辑器
+    if (!adminMode) {
+        return; // 普通用户不显示编辑器
+    }
+
     // 等待页面加载完成
     document.addEventListener('DOMContentLoaded', function() {
         // 创建激活按钮
@@ -386,9 +395,7 @@
 
     </li>
 
-    <li ><a href='admin/editor-hub.html' style='color: #667eea; font-weight: bold;'>🚀 编辑器</a>
-
-    </li>
+    <!-- 编辑器链接已隐藏 -->
 
     <li ><a href='https://pc.coinmint.cc/#/home' >Trading Platform</a>
       
@@ -486,9 +493,7 @@
 
       </li>
 
-      <li><a  href='admin/editor-hub.html' style='color: #667eea; font-weight: bold;'>🚀 编辑器</a>
-
-      </li>
+      <!-- 编辑器链接已隐藏 -->
 
       <li><a  href='https://pc.coinmint.cc/#/home'>Trading Platform</a>
         

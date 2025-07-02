@@ -1,18 +1,22 @@
+---
 backend:
   name: git-gateway
   branch: main
 
-locale: 'zh'
+locale: zh
 
-media_folder: "static/uploads"
-public_folder: "/static/uploads"
+media_folder: static/uploads
+public_folder: /static/uploads
 
 collections:
-  - name: "pages"
-    label: "页面"
+  - name: pages
+    label: 页面
     files:
-      - file: "index.html"
-        label: "首页内容"
-        name: "index"
+      - file: index.html
+        label: 首页内容
+        name: index
         fields:
-          - { label: "页面内容", name: "body", widget: "markdown" }
+          - label: 页面内容
+            name: body
+            widget: markdown
+...
