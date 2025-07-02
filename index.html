@@ -179,6 +179,134 @@
 #post-detail #back-button:hover { text-decoration: underline; }
 /* ==== Headless Blog 样式 结束 ==== */
 </style>
+
+<!-- 管理面板配置读取器 -->
+<script src="admin/config-reader.js"></script>
+
+<!-- 全局可视化编辑器激活器 -->
+<script>
+// 添加编辑器激活按钮
+(function() {
+    // 等待页面加载完成
+    document.addEventListener('DOMContentLoaded', function() {
+        // 创建激活按钮
+        const activatorBtn = document.createElement('div');
+        activatorBtn.innerHTML = `
+            <button id="activate-visual-editor" style="
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                z-index: 999999;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'">
+                🎨 编辑网站
+            </button>
+        `;
+
+        document.body.appendChild(activatorBtn);
+
+        // 绑定点击事件
+        document.getElementById('activate-visual-editor').onclick = function() {
+            // 加载可视化编辑器
+            if (!document.getElementById('visual-editor-script')) {
+                const script = document.createElement('script');
+                script.id = 'visual-editor-script';
+                script.src = 'visual-editor.js';
+                script.onload = function() {
+                    console.log('🎨 全局可视化编辑器已激活');
+                    // 隐藏激活按钮
+                    activatorBtn.style.display = 'none';
+                };
+                script.onerror = function() {
+                    alert('编辑器加载失败，请检查文件路径');
+                };
+                document.head.appendChild(script);
+            }
+        };
+    });
+})();
+</script>
+
+<!-- 编辑器加载器 -->
+<script>
+// 检查是否需要加载编辑器
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const editorType = urlParams.get('editor');
+
+    if (editorType === 'visual') {
+        // 加载可视化编辑器（本地预览版）
+        const script = document.createElement('script');
+        script.src = 'admin/visual-editor.js';
+        script.onload = function() {
+            console.log('🎨 可视化编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'realtime') {
+        // 加载实时编辑器（直接修改文件版）
+        const script = document.createElement('script');
+        script.src = 'admin/real-time-editor.js';
+        script.onload = function() {
+            console.log('⚡ 实时编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'netlify') {
+        // 加载Netlify编辑器（GitHub API版）
+        const script = document.createElement('script');
+        script.src = 'admin/netlify-editor.js';
+        script.onload = function() {
+            console.log('🌐 Netlify编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'simple') {
+        // 加载超简单编辑器（Word式编辑）
+        const script = document.createElement('script');
+        script.src = 'admin/simple-editor.js';
+        script.onload = function() {
+            console.log('📝 超简单编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'live') {
+        // 加载实时文字编辑器（直接输入文字修改）
+        const script = document.createElement('script');
+        script.src = 'admin/live-text-editor.js';
+        script.onload = function() {
+            console.log('🔥 实时文字编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'direct') {
+        // 加载直接编辑器（下载文件方式）
+        const script = document.createElement('script');
+        script.src = 'admin/direct-editor.js';
+        script.onload = function() {
+            console.log('⚡ 直接编辑器已加载');
+        };
+        document.head.appendChild(script);
+    } else if (editorType === 'oneclick') {
+        // 加载一键部署编辑器（一键部署方式）
+        const script = document.createElement('script');
+        script.src = 'admin/one-click-editor.js';
+        script.onload = function() {
+            console.log('🚀 一键部署编辑器已加载');
+        };
+        document.head.appendChild(script);
+    }
+})();
+</script>
 </head>
 <body>
 <!-- Header Start --> 
@@ -255,9 +383,13 @@
     </li>
     
     <li ><a href='https://direct.lc.chat/19126558/' >Contact Us</a>
-      
+
     </li>
-    
+
+    <li ><a href='admin/editor-hub.html' style='color: #667eea; font-weight: bold;'>🚀 编辑器</a>
+
+    </li>
+
     <li ><a href='https://pc.coinmint.cc/#/home' >Trading Platform</a>
       
     </li>
@@ -351,9 +483,13 @@
       </li>
       
       <li><a  href='https://direct.lc.chat/19126558/'>Contact Us</a>
-        
+
       </li>
-      
+
+      <li><a  href='admin/editor-hub.html' style='color: #667eea; font-weight: bold;'>🚀 编辑器</a>
+
+      </li>
+
       <li><a  href='https://pc.coinmint.cc/#/home'>Trading Platform</a>
         
       </li>
@@ -609,7 +745,7 @@
 <!-- Headless Blog 区块 开始 -->
 <div id="blog" class="container">
   <div class="home_top wow fadeInUp">
-    <h3>Latest Articles</h3>
+    <h3>水岸东方</h3>
     <span></span>
   </div>
   <ul id="post-list"></ul>
@@ -646,7 +782,7 @@
         <ul class="list-unstyled">
           <li><i class="glyphicon glyphicon-map-marker"></i> Marseille, New York</li>
           <li><i class="glyphicon glyphicon-envelope"></i> coinmintcc@gmail.com</li>
-          <li><i class="glyphicon glyphicon-phone"></i> +1 (888) 123-4567</li>
+          <li><i class="glyphicon glyphicon-phone"></i> +1 (999) 888-7777</li>
         </ul>
         <!-- 删除了社交媒体图标 -->
       </div>
@@ -728,6 +864,213 @@ $(function(){
 </script> 
 <!-- Headless 前端逻辑 开始 -->
 <script src="main.js"></script>
+
+<!-- 全局编辑器支持 -->
+<script>
+// 监听来自编辑器的消息
+window.addEventListener('message', function(event) {
+    if (event.data.action === 'startEditor') {
+        startInlineEditor();
+    }
+});
+
+// 检查是否需要启动编辑模式
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('edit') === 'true') {
+        setTimeout(startInlineEditor, 1000);
+    }
+});
+
+// 启动内联编辑器
+function startInlineEditor() {
+    // 为所有文本元素添加编辑功能
+    const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a, button');
+
+    textElements.forEach(element => {
+        // 只对包含文本且没有子元素的元素启用编辑
+        if (element.children.length === 0 && element.textContent.trim()) {
+            element.style.border = '2px dashed #667eea';
+            element.style.padding = '5px';
+            element.style.cursor = 'pointer';
+            element.style.transition = 'all 0.3s';
+            element.contentEditable = true;
+            element.setAttribute('data-original', element.textContent);
+
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.focus();
+                this.style.backgroundColor = '#f0f9ff';
+            });
+
+            element.addEventListener('blur', function() {
+                this.style.backgroundColor = '';
+
+                // 如果内容发生变化，保存修改
+                if (this.textContent !== this.getAttribute('data-original')) {
+                    saveChange(this);
+                }
+            });
+
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    this.blur();
+                }
+            });
+        }
+    });
+
+    // 显示编辑提示
+    showEditHint();
+}
+
+// 显示编辑提示
+function showEditHint() {
+    const hint = document.createElement('div');
+    hint.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span>🚀 编辑模式已启用</span>
+            <button onclick="saveAllChanges()" style="background: #10b981; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">保存修改</button>
+            <button onclick="exitEditMode()" style="background: #ef4444; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">退出编辑</button>
+        </div>
+    `;
+    hint.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        z-index: 10000;
+        border: 2px solid #667eea;
+    `;
+    hint.id = 'edit-hint';
+    document.body.appendChild(hint);
+}
+
+// 保存单个修改
+function saveChange(element) {
+    const change = {
+        element: element.tagName + ':' + element.textContent.substring(0, 20),
+        oldText: element.getAttribute('data-original'),
+        newText: element.textContent,
+        timestamp: new Date().toISOString(),
+        selector: getElementSelector(element)
+    };
+
+    // 保存到本地存储
+    let changes = JSON.parse(localStorage.getItem('page-changes') || '[]');
+    changes.push(change);
+    localStorage.setItem('page-changes', JSON.stringify(changes));
+
+    // 更新原始值
+    element.setAttribute('data-original', element.textContent);
+
+    console.log('保存修改:', change);
+}
+
+// 获取元素选择器
+function getElementSelector(element) {
+    if (element.id) return '#' + element.id;
+    if (element.className) return '.' + element.className.split(' ')[0];
+    return element.tagName.toLowerCase();
+}
+
+// 保存所有修改
+function saveAllChanges() {
+    const changes = JSON.parse(localStorage.getItem('page-changes') || '[]');
+    if (changes.length === 0) {
+        alert('没有需要保存的修改');
+        return;
+    }
+
+    if (confirm(`确定要保存 ${changes.length} 项修改吗？`)) {
+        // 这里可以调用部署API
+        alert('修改已保存！可以在管理面板中一键部署。');
+
+        // 移除编辑样式
+        document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+            el.style.border = '';
+            el.style.padding = '';
+        });
+    }
+}
+
+// 退出编辑模式
+function exitEditMode() {
+    // 移除所有编辑样式和功能
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+        el.contentEditable = false;
+        el.style.border = '';
+        el.style.padding = '';
+        el.style.cursor = '';
+        el.style.backgroundColor = '';
+    });
+
+    // 移除提示
+    const hint = document.getElementById('edit-hint');
+    if (hint) hint.remove();
+
+    // 移除快速编辑按钮
+    const quickBtn = document.getElementById('quick-edit-btn');
+    if (quickBtn) quickBtn.remove();
+
+    // 清除URL参数
+    if (window.location.search.includes('edit=true')) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+}
+
+// 快速编辑功能
+function startQuickEdit() {
+    startInlineEditor();
+}
+
+// 添加快速编辑按钮
+function addQuickEditButton() {
+    // 检查是否已存在
+    if (document.getElementById('quick-edit-btn')) return;
+
+    const button = document.createElement('button');
+    button.id = 'quick-edit-btn';
+    button.innerHTML = '⚡ 快速编辑';
+    button.onclick = startQuickEdit;
+    button.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        z-index: 9999;
+        transition: transform 0.2s;
+    `;
+
+    button.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-3px)';
+    });
+
+    button.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+
+    document.body.appendChild(button);
+}
+
+// 页面加载完成后添加快速编辑按钮
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(addQuickEditButton, 2000);
+});
+</script>
+
 <!-- Headless 前端逻辑 结束 -->
 </body>
 
