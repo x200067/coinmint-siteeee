@@ -1056,10 +1056,10 @@ function addQuickEditButton() {
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(addQuickEditButton, 2000);
 
-    // 显示CTA模态框（延迟3秒）
-    setTimeout(function() {
-        document.getElementById('cta-modal').style.display = 'flex';
-    }, 3000);
+    // 移除自动弹出模态框功能 - 只保留手动触发
+    // setTimeout(function() {
+    //     document.getElementById('cta-modal').style.display = 'flex';
+    // }, 3000);
 });
 
 // 点击模态框背景关闭
