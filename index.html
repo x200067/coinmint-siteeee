@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Mirrored from coinmint.net/bb.coinmint.cc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:29:53 GMT -->
 <!-- Added by HTTrack -->
 <!-- Mirrored from coinmint.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:07:35 GMT -->
@@ -67,7 +66,6 @@
   opacity: 0.95;
   animation: fadeInUp 1s 0.3s both;
 }
-
 .service-overlay {
   position: absolute;
   top: 0;
@@ -87,12 +85,10 @@
 .service_item:hover .service-overlay {
   opacity: 1;
 }
-
 .service-overlay h4 {
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
-
 .social-btn {
   display: inline-block;
   width: 36px;
@@ -108,7 +104,6 @@
 .social-btn:hover {
   background: #ff6b6b;
 }
-
 /* 数据统计卡片 */
 .stats-card {
   background: #fff;
@@ -132,7 +127,6 @@
   font-size: 1rem;
   color: #666;
 }
-
 /* 动画效果 */
 @keyframes fadeInUp {
   from {
@@ -144,7 +138,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-
 /* 响应式调整 */
 @media (max-width: 768px) {
   .slide-text {
@@ -165,30 +158,24 @@
     height: 150px !important;
   }
 }
-
 /* 新增：Logo放大与页脚样式 */
 #logo img {
   height: 100px; /* 原83px调整为100px */
   width: 120px; /* 原103px调整为120px */
 }
-
 #footer {
   background-color: #1E293B; /* 页脚背景色改为深蓝色 */
   color: #F8FAFC; /* 页脚文字颜色改为浅色 */
 }
-
 #footer .footer-copyright {
   border-top: 1px solid #334155; /* 页脚分割线颜色 */
 }
-
 #footer a {
   color: #94A3B8; /* 页脚链接颜色 */
 }
-
 #footer a:hover {
   color: #36D399; /* 页脚链接悬停颜色 */
 }
-
 /* ==== Headless Blog 样式 开始 ==== */
 #blog { padding: 60px 0; }
 #blog ul#post-list { list-style: none; padding: 0; }
@@ -207,10 +194,8 @@
 #post-detail #back-button:hover { text-decoration: underline; }
 /* ==== Headless Blog 样式 结束 ==== */
 </style>
-
 <!-- 管理面板配置读取器 -->
 <script src="admin/config-reader.js"></script>
-
 <!-- 全局可视化编辑器激活器 (仅管理员可见) -->
 <script>
 // 添加编辑器激活按钮 (仅在特殊URL参数时显示)
@@ -218,12 +203,10 @@
     // 检查是否为管理员模式
     const urlParams = new URLSearchParams(window.location.search);
     const adminMode = urlParams.get('admin') === 'true' || urlParams.get('edit') === 'true';
-
     // 只有管理员模式才显示编辑器
     if (!adminMode) {
         return; // 普通用户不显示编辑器
     }
-
     // 等待页面加载完成
     document.addEventListener('DOMContentLoaded', function() {
         // 创建激活按钮
@@ -253,9 +236,7 @@
                 🎨 编辑网站
             </button>
         `;
-
         document.body.appendChild(activatorBtn);
-
         // 绑定点击事件
         document.getElementById('activate-visual-editor').onclick = function() {
             // 加载可视化编辑器
@@ -277,14 +258,12 @@
     });
 })();
 </script>
-
 <!-- 编辑器加载器 -->
 <script>
 // 检查是否需要加载编辑器
 (function() {
     const urlParams = new URLSearchParams(window.location.search);
     const editorType = urlParams.get('editor');
-
     if (editorType === 'visual') {
         // 加载可视化编辑器（本地预览版）
         const script = document.createElement('script');
@@ -346,81 +325,45 @@
 </script>
 </head>
 <body>
-<!-- Header Start --> 
+<!-- Header Start -->
 <nav id="cd-lateral-nav">
   <ul class="cd-navigation">
     <li><a class='current' href='index-2.html'>Home</a></li>
-    
     <li class="item-has-children"><a href='index932e932e932e.html?pages_44/'>About Us</a>
-      
       <ul class='sub-menu'>
-        
         <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='Company Overview'>Company Overview</a></li>
-        
         <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Choose Us'>Why Choose Us</a></li>
-        
         <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Executive Team'>Executive Team</a></li>
-        
         <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='Careers'>Careers</a></li>
-        
         <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='Technology & IP'>Technology & IP</a></li>
-        
         <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
-        
         <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Milestones'>Milestones</a></li>
-        
       </ul>
-      
     </li>
-    
     <li class="item-has-children"><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Solutions</a>
-      
       <ul class='sub-menu'>
-        
         <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial Mining'>Industrial Mining</a></li>
-        
         <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
-
         <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
-        
       </ul>
-      
     </li>
-    
     <li class="item-has-children"><a href='index7db57db57db5.html?list_39/'>Company History</a>
-      
       <ul class='sub-menu'>
-        
         <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='Our Origins'>Our Origins</a></li>
-        
         <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG Investment'>NYDIG Investment</a></li>
-        
       </ul>
-      
     </li>
-    
     <li class="item-has-children"><a href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
-      
       <ul class='sub-menu'>
-        
         <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
-        
         <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Miner Hosting'>Miner Hosting</a></li>
-
         <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Profit Calculation'>Profit Calculation</a></li>
-        
         <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
-        
       </ul>
-      
     </li>
-    
     <li ><a href='https://direct.lc.chat/19126558/' >Contact Us</a>
-
     </li>
-
     <!-- 编辑器链接已隐藏 -->
-
   </ul>
 </nav>
 <header id="header">
@@ -436,81 +379,44 @@
   <div class="container">
     <ul>
       <li class="first_menu"><a class='current' href='index-2.html'>Home</a></li>
-      
       <li><a href='index932e932e932e.html?pages_44/'>About Us</a>
-        
         <ul class='drop_menu'>
-          
           <li><a href='index2b652b652b65.html?jianjie/' id='lsed' title='Company Overview'>Company Overview</a></li>
-          
           <li><a href='indexc1a5c1a5c1a5.html?why-coinmint/' id='lsed' title='Why Choose Us'>Why Choose Us</a></li>
-          
           <li><a href='indexdd4edd4edd4e.html?zuzhi/' id='lsed' title='Executive Team'>Executive Team</a></li>
-          
           <li><a href='index9a149a149a14.html?pages_35/' id='lsed' title='Careers'>Careers</a></li>
-          
           <li><a href='index470e470e470e.html?pages_37/' id='lsed' title='Technology & IP'>Technology & IP</a></li>
-          
           <li><a href='index556855685568.html?pages_38/' id='lsed' title='Corporate Strategy'>Corporate Strategy</a></li>
-          
           <li><a href='indexb2beb2beb2be.html?pages_46/' id='lsed' title='Milestones'>Milestones</a></li>
-          
         </ul>
-        
       </li>
-      
       <li><a href='indexd7ebd7ebd7eb.html?xiangmu/'>Mining Solutions</a>
-        
         <ul class='drop_menu'>
-          
           <li><a href='index82b382b382b3.html?xm1/' id='lsed' title='Industrial Mining'>Industrial Mining</a></li>
-          
           <li><a href='index074d074d074d.html?xm2/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
-
           <li><a href='index4c5f4c5f4c5f.html?xm4/' id='lsed' title='Clean Energy'>Clean Energy</a></li>
-          
         </ul>
-        
       </li>
-      
       <li><a href='index7db57db57db5.html?list_39/'>Company History</a>
-        
         <ul class='drop_menu'>
-          
           <li><a href='indexbe3ebe3ebe3e.html?pages_41/' id='lsed' title='Our Origins'>Our Origins</a></li>
-          
           <li><a href='index0bc00bc00bc0.html?pages_40/' id='lsed' title='NYDIG Investment'>NYDIG Investment</a></li>
-          
         </ul>
-        
       </li>
-      
       <li><a href='index7f127f127f12.html?ronghe/'>Mining Guide</a>
-        
         <ul class='drop_menu'>
-          
           <li><a href='index5b675b675b67.html?rh1/' id='lsed' title='Cloud Mining'>Cloud Mining</a></li>
-          
           <li><a href='indexdd9fdd9fdd9f.html?rh2/' id='lsed' title='Miner Hosting'>Miner Hosting</a></li>
-
           <li><a href='indexebf0ebf0ebf0.html?rh3/' id='lsed' title='Profit Calculation'>Profit Calculation</a></li>
-          
           <li><a href='index0c760c760c76.html?rh4/' id='lsed' title='Why Coinmint'>Why Coinmint</a></li>
-          
         </ul>
-        
       </li>
-      
       <li><a  href='https://direct.lc.chat/19126558/'>Contact Us</a>
-
       </li>
-
       <!-- 编辑器链接已隐藏 -->
-
     </ul>
   </div>
 </nav>
-
 <div class="clear"></div>
 <div class="cd-main-content">
 <!-- Hero Slider -->
@@ -549,7 +455,6 @@
     <span class="prev"></span><span class="next"></span>
   </div>
 </div>
-
 <div id="mobileflash">
   <div id="adBox" class="slideBox">
     <div class="bd">
@@ -563,7 +468,6 @@
     </div>
   </div>
 </div>
-
 <!-- Company Overview -->
 <div id="about" class="container">
   <div class="home_top wow fadeInUp">
@@ -583,7 +487,6 @@
   </div>
 </div>
 <div class="clear"></div>
-
 <!-- Key Statistics -->
 <div id="statistics" class="container">
   <div class="home_top wow fadeInUp">
@@ -618,7 +521,6 @@
   </div>
 </div>
 <div class="clear"></div>
-
 <!-- Service Offerings -->
 <div id="service">
   <div class="container">
@@ -627,7 +529,7 @@
       <span></span>
     </div>
     <div class="service_con">
-      <div class="service_con_row"> 
+      <div class="service_con_row">
         <div class='service_item wow fadeInUp' data-wow-delay=".2s">
           <a href='index82b382b382b3.html?xm1/'>
             <div class='service_item_img' style='background:url(static/upload/image/20250417/1744856215937064.jpg) no-repeat center; background-size: cover; height: 200px;'>
@@ -641,7 +543,6 @@
             </div>
           </a>
         </div>
-        
         <div class='service_item wow fadeInUp' data-wow-delay=".3s">
           <a href='index074d074d074d.html?xm2/'>
             <div class='service_item_img' style='background:url(static/upload/image/20250417/1744856539629915.jpg) no-repeat center; background-size: cover; height: 200px;'>
@@ -655,7 +556,6 @@
             </div>
           </a>
         </div>
-
         <div class='service_item wow fadeInUp' data-wow-delay=".5s">
           <a href='index4c5f4c5f4c5f.html?xm4/'>
             <div class='service_item_img' style='background:url(static/upload/image/20250417/1744857283787180.jpg) no-repeat center; background-size: cover; height: 200px;'>
@@ -673,7 +573,6 @@
     </div>
   </div>
 </div>
-
 <!-- Latest News -->
 <div id="news" class="container">
   <div class="home_top wow fadeInUp">
@@ -699,7 +598,6 @@
   </div>
 </div>
 <div class="clear"></div>
-
 <!-- Testimonials -->
 <div id="testimonials" class="container">
   <div class="home_top wow fadeInUp">
@@ -736,7 +634,6 @@
   </div>
 </div>
 <div class="clear"></div>
-
 <!-- Headless Blog 区块 开始 -->
 <div id="blog" class="container">
   <div class="home_top wow fadeInUp">
@@ -751,7 +648,6 @@
   </div>
 </div>
 <!-- Headless Blog 区块 结束 -->
-
 <!-- Footer -->
 <div id="footer">
   <div class="container">
@@ -777,7 +673,7 @@
         <ul class="list-unstyled">
           <li><i class="glyphicon glyphicon-map-marker"></i> Marseille, New York</li>
           <li><i class="glyphicon glyphicon-envelope"></i> coinmintcc@gmail.com</li>
-          <li><i class="glyphicon glyphicon-phone"></i> +1 00000000</li>
+
         </ul>
         <!-- 删除了社交媒体图标 -->
       </div>
@@ -803,18 +699,14 @@
   </div>
 </div>
 <div class="clear"></div>
-
 <div id="toolbar2">
   <li><a href='index-2.html'><span class="icon-home"></span>Home</a></li>
-  <li><a href="tel:coinmintcc@gmail.com"><span class="icon-phone"></span>Call</a></li>
   <li><a href="sms:coinmintcc@gmail.com"><span class="icon-envelope"></span>SMS</a></li>
   <li><a href="https://direct.lc.chat/19126558/"><span class="icon-user"></span>Contact</a></li>
 </div>
-
 </div>
 <div class="clear"></div>
 <div class="blank55"></div>
-
 <script>
 $(function(){
   // Initialize slider
@@ -826,10 +718,8 @@ $(function(){
     prevCell: ".prev",
     nextCell: ".next"
   });
-  
   // Initialize animations
   new WOW().init();
-  
   // Service item hover effects
   $(".service_item").hover(function(){
     $(this).find(".service_item_img").css("transform", "scale(1.05)");
@@ -837,29 +727,26 @@ $(function(){
   }, function(){
     $(this).find(".service_item_img").css("transform", "scale(1)");
   });
-  
   // Toolbar interactions
   $(".toolbar_item").hover(function(){
-    $(this).find(".tool_qq").show();			  
-    $(this).find(".tool_tel").animate({left:"-160px"},"fast",function(){});							  
+    $(this).find(".tool_qq").show();
+    $(this).find(".tool_tel").animate({left:"-160px"},"fast",function(){});
     $(this).find(".tool_weixin").show();
     $(this).find(".t_item").addClass("cur")
   },function(){
     $(this).find(".tool_qq").hide();
-    $(this).find(".tool_tel").animate({left:"0px"},"fast",function(){});	
+    $(this).find(".tool_tel").animate({left:"0px"},"fast",function(){});
     $(this).find(".tool_weixin").hide();
     $(this).find(".t_item").removeClass("cur")
   });
-
   // Back to top functionality
   $("#gotop").click(function(){
     $("html,body").animate({scrollTop:0});
   });
 });
-</script> 
+</script>
 <!-- Headless 前端逻辑 开始 -->
 <script src="main.js"></script>
-
 <!-- 全局编辑器支持 -->
 <script>
 // 监听来自编辑器的消息
@@ -868,7 +755,6 @@ window.addEventListener('message', function(event) {
         startInlineEditor();
     }
 });
-
 // 检查是否需要启动编辑模式
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -876,12 +762,10 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(startInlineEditor, 1000);
     }
 });
-
 // 启动内联编辑器
 function startInlineEditor() {
     // 为所有文本元素添加编辑功能
     const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a, button');
-
     textElements.forEach(element => {
         // 只对包含文本且没有子元素的元素启用编辑
         if (element.children.length === 0 && element.textContent.trim()) {
@@ -891,22 +775,18 @@ function startInlineEditor() {
             element.style.transition = 'all 0.3s';
             element.contentEditable = true;
             element.setAttribute('data-original', element.textContent);
-
             element.addEventListener('click', function(e) {
                 e.preventDefault();
                 this.focus();
                 this.style.backgroundColor = '#f0f9ff';
             });
-
             element.addEventListener('blur', function() {
                 this.style.backgroundColor = '';
-
                 // 如果内容发生变化，保存修改
                 if (this.textContent !== this.getAttribute('data-original')) {
                     saveChange(this);
                 }
             });
-
             element.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
@@ -915,11 +795,9 @@ function startInlineEditor() {
             });
         }
     });
-
     // 显示编辑提示
     showEditHint();
 }
-
 // 显示编辑提示
 function showEditHint() {
     const hint = document.createElement('div');
@@ -944,7 +822,6 @@ function showEditHint() {
     hint.id = 'edit-hint';
     document.body.appendChild(hint);
 }
-
 // 保存单个修改
 function saveChange(element) {
     const change = {
@@ -954,25 +831,20 @@ function saveChange(element) {
         timestamp: new Date().toISOString(),
         selector: getElementSelector(element)
     };
-
     // 保存到本地存储
     let changes = JSON.parse(localStorage.getItem('page-changes') || '[]');
     changes.push(change);
     localStorage.setItem('page-changes', JSON.stringify(changes));
-
     // 更新原始值
     element.setAttribute('data-original', element.textContent);
-
     console.log('保存修改:', change);
 }
-
 // 获取元素选择器
 function getElementSelector(element) {
     if (element.id) return '#' + element.id;
     if (element.className) return '.' + element.className.split(' ')[0];
     return element.tagName.toLowerCase();
 }
-
 // 保存所有修改
 function saveAllChanges() {
     const changes = JSON.parse(localStorage.getItem('page-changes') || '[]');
@@ -980,11 +852,9 @@ function saveAllChanges() {
         alert('没有需要保存的修改');
         return;
     }
-
     if (confirm(`确定要保存 ${changes.length} 项修改吗？`)) {
         // 这里可以调用部署API
         alert('修改已保存！可以在管理面板中一键部署。');
-
         // 移除编辑样式
         document.querySelectorAll('[contenteditable="true"]').forEach(el => {
             el.style.border = '';
@@ -992,7 +862,6 @@ function saveAllChanges() {
         });
     }
 }
-
 // 退出编辑模式
 function exitEditMode() {
     // 移除所有编辑样式和功能
@@ -1003,31 +872,25 @@ function exitEditMode() {
         el.style.cursor = '';
         el.style.backgroundColor = '';
     });
-
     // 移除提示
     const hint = document.getElementById('edit-hint');
     if (hint) hint.remove();
-
     // 移除快速编辑按钮
     const quickBtn = document.getElementById('quick-edit-btn');
     if (quickBtn) quickBtn.remove();
-
     // 清除URL参数
     if (window.location.search.includes('edit=true')) {
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }
-
 // 快速编辑功能
 function startQuickEdit() {
     startInlineEditor();
 }
-
 // 添加快速编辑按钮
 function addQuickEditButton() {
     // 检查是否已存在
     if (document.getElementById('quick-edit-btn')) return;
-
     const button = document.createElement('button');
     button.id = 'quick-edit-btn';
     button.innerHTML = '⚡ 快速编辑';
@@ -1048,28 +911,21 @@ function addQuickEditButton() {
         z-index: 9999;
         transition: transform 0.2s;
     `;
-
     button.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px)';
     });
-
     button.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0)';
     });
-
     document.body.appendChild(button);
 }
-
 // 页面加载完成后添加快速编辑按钮
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(addQuickEditButton, 2000);
 });
 </script>
-
 <!-- Headless 前端逻辑 结束 -->
 </body>
-
 <!-- Mirrored from coinmint.net/bb.coinmint.cc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:17 GMT -->
-
 <!-- Mirrored from coinmint.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:00 GMT -->
 </html>

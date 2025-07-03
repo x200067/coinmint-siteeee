@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Mirrored from coinmint.net/bb.coinmint.cc/index0bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:36 GMT -->
 <!-- Added by HTTrack -->
 <!-- Mirrored from coinmint.net/index0bc00bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
@@ -31,13 +30,11 @@
             --accent-color: #e74c3c;
             --light-color: #ecf0f1;
         }
-        
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
         }
-        
         .hero-banner {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(static/upload/other/20250417/1744861854966853.jpg);
             background-size: cover;
@@ -50,20 +47,17 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        
         .hero-banner h1 {
             font-size: 3rem;
             font-weight: 700;
             animation: fadeInUp 1s ease-out;
         }
-        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
-        
         .stat-card {
             background: #f9fafc;
             border-radius: 12px;
@@ -72,30 +66,25 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
         .stat-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
         }
-        
         .stat-value {
             font-size: 2.8rem;
             font-weight: 900;
             color: var(--secondary-color);
             margin-bottom: 15px;
         }
-        
         .stat-label {
             font-size: 1.1rem;
             color: #666;
         }
-        
         .timeline-section {
             position: relative;
             padding: 40px 0;
             margin: 40px 0;
         }
-        
         .timeline-section::before {
             content: '';
             position: absolute;
@@ -106,19 +95,16 @@
             background: #dfe4ea;
             transform: translateX(-50%);
         }
-        
         .timeline-event {
             position: relative;
             margin-bottom: 50px;
             padding: 0 30px;
         }
-        
         .timeline-event::after {
             content: '';
             display: table;
             clear: both;
         }
-        
         .timeline-content {
             width: 45%;
             padding: 25px;
@@ -126,15 +112,12 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
         }
-        
         .timeline-event:nth-child(odd) .timeline-content {
             float: left;
         }
-        
         .timeline-event:nth-child(even) .timeline-content {
             float: right;
         }
-        
         .timeline-marker {
             position: absolute;
             top: 30px;
@@ -147,14 +130,12 @@
             z-index: 10;
             box-shadow: 0 0 0 6px rgba(52, 152, 219, 0.15);
         }
-        
         .timeline-date {
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 12px;
             display: block;
         }
-        
         .expert-quote {
             background: #eaf4ff;
             border-left: 6px solid var(--secondary-color);
@@ -163,7 +144,6 @@
             font-style: italic;
             font-size: 1.1rem;
         }
-        
         .chart-wrapper {
             background: #f9fafc;
             border-radius: 12px;
@@ -171,86 +151,70 @@
             margin: 40px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
         }
-        
         .competitive-analysis {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
-        
         .competitive-card {
             background: #f9fafc;
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
         }
-        
         .competitive-card i {
             font-size: 2.2rem;
             color: var(--secondary-color);
             margin-bottom: 15px;
         }
-        
         .related-insights {
             margin-top: 50px;
             padding-top: 30px;
             border-top: 2px solid #eee;
         }
-        
         .insight-card {
             margin-bottom: 30px;
             padding-bottom: 30px;
             border-bottom: 1px solid #eee;
         }
-        
         .insight-card:last-child {
             border-bottom: none;
         }
-        
         .insight-card h4 {
             font-size: 1.25rem;
             margin-top: 0;
         }
-        
         .insight-card h4 a {
             color: #333;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
         .insight-card h4 a:hover {
             color: var(--secondary-color);
         }
-        
         @media (max-width: 768px) {
             .hero-banner h1 {
                 font-size: 2rem;
             }
-            
             .timeline-section::before {
                 left: 30px;
             }
-            
             .timeline-content {
                 width: calc(100% - 80px);
             }
-            
             .timeline-event:nth-child(even) .timeline-content,
             .timeline-event:nth-child(odd) .timeline-content {
                 float: right;
             }
-            
             .timeline-marker {
                 left: 30px;
             }
-            
             .stats-grid,
             .competitive-analysis {
                 grid-template-columns: 1fr;
             }
         }
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -261,7 +225,6 @@
                 transform: translateY(0);
             }
         }
-
         /* 页脚样式 */
         #footer {
             background-color: #1a1a1a; /* 深灰色背景 */
@@ -272,7 +235,7 @@
             color: #ffffff; /* 白色标题 */
             margin-bottom: 20px;
         }
-        #footer p, 
+        #footer p,
         #footer ul li {
             color: #f0f0f0; /* 浅灰色正文 */
         }
@@ -303,7 +266,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header & Navigation -->
     <nav id="cd-lateral-nav">
@@ -345,7 +307,6 @@
             </li>
             <li><a href='https://direct.lc.chat/19126558/' >Contact Us</a></li>
             <li><a href='https://pc.coinmint.cc/#/home' >Trading Platform</a></li>
-            
         </ul>
     </nav>
     <header id="header">
@@ -397,18 +358,15 @@
                 </li>
                 <li><a href='https://direct.lc.chat/19126558/'>Contact Us</a></li>
                 <li><a href='https://pc.coinmint.cc/#/home'>Trading Platform</a></li>
-                
             </ul>
         </div>
     </nav>
-
     <div class="clear"></div>
     <div class="cd-main-content">
         <!-- Hero Banner -->
         <div class="hero-banner">
             <h1>NYDIG's $200M Gamble: Redefining Bitcoin Mining</h1>
         </div>
-
         <!-- Main Content -->
         <div class="main container">
             <div class="row">
@@ -428,7 +386,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Main Content -->
                 <div class="col-md-9">
                     <div class="right_top channel_top">
@@ -436,10 +393,8 @@
                         <span> <strong>Current position:&nbsp;&nbsp;</strong> <a href='index-2.html'>Home</a> > <a href='index7db57db57db5.html?list_39/'>Company History</a> > <a href='index0bc00bc00bc0.html?pages_40/'>NYDIG Investment</a> </span>
                     </div>
                     <div class="right_con maximg news-content">
-
                         <!-- Industry Context -->
                         <p>In 2024, the global Bitcoin mining industry entered a new era of institutional dominance. With over 400 EH/s of total network hash rate and a growing focus on clean energy, companies like Marathon Digital, Riot Platforms, and now NYDIG are battling to control the future of Bitcoin’s infrastructure. NYDIG’s $200 million investment in Coinmint is not just a financial move—it’s a strategic play to reshape the industry’s balance of power.</p>
-
                         <!-- Stats Grid -->
                         <div class="stats-grid">
                             <div class="stat-card">
@@ -459,7 +414,6 @@
                                 <div class="stat-label">Coinmint’s Hydropower Cost (Massena Facility)</div>
                             </div>
                         </div>
-
                         <!-- Timeline -->
                         <div class="timeline-section">
                             <div class="timeline-event">
@@ -498,12 +452,10 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Expert Quote -->
                         <div class="expert-quote">
                             <p>“NYDIG’s move isn’t just about buying hashrate—they’re building a vertically integrated empire. By controlling mining infrastructure, financial products, and custody, they’re creating a one-stop shop for institutional Bitcoin exposure.” <br><strong>— Lisa Chen, Senior Analyst at Crypto Insights Group</strong></p>
                         </div>
-
                         <!-- Technical Deep Dive -->
                         <h4>Technical Synergy: Coinmint’s Infrastructure + NYDIG’s Vision</h4>
                         <p>Coinmint’s Massena facility isn’t just a data center—it’s a marvel of modern mining engineering: </p>
@@ -513,7 +465,6 @@
                             <li><strong>Modular Design</strong>: Allows rapid scaling—NYDIG could add 50,000 miners within 6 months.</li>
                         </ul>
                         <p>NYDIG’s contribution? A $100M upgrade to Coinmint’s power distribution systems, enabling it to handle 300 MW of additional capacity by 2026.</p>
-
                         <!-- Competitive Landscape -->
                         <div class="competitive-analysis">
                             <div class="competitive-card">
@@ -532,13 +483,11 @@
                                 <p>Regulatory scrutiny (NYDIG’s custody business + mining) and Mintvest’s $36M lawsuit could delay expansion.</p>
                             </div>
                         </div>
-
                         <!-- Hashrate Chart -->
                         <div class="chart-wrapper">
                             <h4>NYDIG’s Projected Hashrate Growth (2023–2026)</h4>
                             <canvas id="hashrateChart" width="400" height="200"></canvas>
                         </div>
-
                         <!-- Legal Dispute Context -->
                         <h4>The Mintvest Lawsuit: A Cloud Over Expansion</h4>
                         <p>Mintvest Capital, a 18.2% stakeholder in Coinmint, allege NYDIG undervalued their shares during the acquisition. The lawsuit exposes deeper tensions:</p>
@@ -547,7 +496,6 @@
                             <li>NYDIG’s refusal to disclose post-acquisition financials, fueling suspicions of undervaluation.</li>
                         </ol>
                         <p>While NYDIG downplays the suit, legal experts warn it could delay integration for 6–12 months.</p>
-
                         <!-- Market Reaction -->
                         <h4>Market and Community Response</h4>
                         <p>The crypto community is divided: </p>
@@ -567,7 +515,6 @@
                                 </ul>
                             </div>
                         </div>
-
                         <!-- Future Outlook -->
                         <h4>What’s Next for NYDIG and Coinmint?</h4>
                         <p>Three likely scenarios: </p>
@@ -576,7 +523,6 @@
                             <li><strong>Product Synergy</strong>: Launching “mining-backed” financial products (e.g., Bitcoin yield accounts for institutions).</li>
                             <li><strong>Tech Innovation</strong>: Investing in next-gen miners (e.g., Bitmain’s S21 series) to stay ahead of competitors.</li>
                         </ol>
-
                         <!-- Related Insights -->
                         <div class="related-insights">
                             <h3>Related Industry Insights</h3>
@@ -593,13 +539,11 @@
                                 <p>How NYDIG’s model could inspire Goldman Sachs, BlackRock, and others to enter the space.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <div id="footer">
         <div class="container">
@@ -625,7 +569,6 @@
                     <ul class="list-unstyled">
                         <li><i class="fa fa-map-marker"></i> Marseille, New York</li>
                         <li><i class="fa fa-envelope"></i> coinmintcc@gmail.com</li>
-                        <li><i class="fa fa-phone"></i> +1 (888) 123-4567</li>
                     </ul>
                     <!-- 已删除社交图标代码 -->
                 </div>
@@ -650,20 +593,16 @@
             </div>
         </div>
     </div>
-
     <!-- Toolbar -->
     <div id="toolbar2">
         <li><a href='index-2.html'><span class="icon-home"></span>Home</a></li>
-        <li><a href="tel:coinmintcc@gmail.com"><span class="icon-phone"></span>Call</a></li>
         <li><a href="sms:coinmintcc@gmail.com"><span class="icon-envelope"></span>SMS</a></li>
         <li><a href="https://direct.lc.chat/19126558/"><span class="icon-user"></span>Contact</a></li>
     </div>
-
     <!-- Scripts -->
     <script>
         $(function() {
             new WOW().init();
-
             // Hashrate Chart Initialization
             const ctx = document.getElementById('hashrateChart').getContext('2d');
             new Chart(ctx, {
@@ -683,9 +622,9 @@
                     responsive: true,
                     plugins: {
                         legend: { display: false },
-                        title: { 
-                            display: true, 
-                            text: 'NYDIG Projected Hashrate Growth (2023–2026)' 
+                        title: {
+                            display: true,
+                            text: 'NYDIG Projected Hashrate Growth (2023–2026)'
                         }
                     },
                     scales: {
@@ -696,7 +635,6 @@
                     }
                 }
             });
-
             // Smooth Scroll
             $('a[href^="#"]').on('click', function(e) {
                 e.preventDefault();
@@ -707,8 +645,6 @@
         });
     </script>
 </body>
-
 <!-- Mirrored from coinmint.net/bb.coinmint.cc/index0bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:36 GMT -->
-
 <!-- Mirrored from coinmint.net/index0bc00bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
 </html>
