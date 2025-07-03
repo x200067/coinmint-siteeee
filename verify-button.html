@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮验证页面</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .verification { background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .success { color: #28a745; }
+        .button-test { background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 CTA按钮验证页面</h1>
+    
+    <div class="verification">
+        <h2 class="success">✅ 验证结果</h2>
+        <p><strong>页面</strong>: indexd7ebd7ebd7eb.html</p>
+        <p><strong>按钮文本</strong>: "Get Started Today"</p>
+        <p><strong>当前链接</strong>: <code>https://pc.coinmint.cc/</code></p>
+        <p><strong>状态</strong>: ✅ 已正确更新</p>
+    </div>
+
+    <div class="verification">
+        <h3>测试按钮</h3>
+        <p>点击下面的按钮测试跳转：</p>
+        <a href="https://pc.coinmint.cc/" class="button-test" target="_blank">Get Started Today</a>
+    </div>
+
+    <div class="verification">
+        <h3>📝 说明</h3>
+        <p>如果您在浏览器中看到的按钮仍然指向旧链接，请尝试：</p>
+        <ol>
+            <li><strong>强制刷新</strong>: 按 Ctrl+F5 (Windows) 或 Cmd+Shift+R (Mac)</li>
+            <li><strong>清除缓存</strong>: 清除浏览器缓存后重新访问</li>
+            <li><strong>无痕模式</strong>: 在无痕/隐私模式下打开页面</li>
+        </ol>
+    </div>
+
+    <div class="verification">
+        <h3>🎯 确认信息</h3>
+        <p>文件 <code>indexd7ebd7ebd7eb.html</code> 第432行的按钮已确认更新为：</p>
+        <code>&lt;a href="https://pc.coinmint.cc/" class="btn btn-primary btn-lg"&gt;Get Started Today&lt;/a&gt;</code>
+    </div>
+
+    <script>
+        // 显示当前时间，确认页面是最新的
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date().toLocaleString();
+            const timeDiv = document.createElement('div');
+            timeDiv.innerHTML = `<p><small>页面生成时间: ${now}</small></p>`;
+            document.body.appendChild(timeDiv);
+        });
+    </script>
+</body>
+</html>

@@ -220,7 +220,7 @@
 </nav>
 <header id="header">
   <div class="container">
-    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/ loading="lazy" decoding="async"></a></div>
     <div class="top_des"></div>
     <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
     <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a> </div>
@@ -442,7 +442,7 @@
                   </div>
                   <!-- Call to Action -->
                   <div class="text-center mt-8">
-                      <a href="https://direct.lc.chat/19126558/" class="btn btn-primary btn-lg">Start Mining with Coinmint Today</a>
+                      <a href="https://pc.coinmint.cc/" class="btn btn-primary btn-lg">Start Mining with Coinmint Today</a>
                       <p class="mt-4 text-gray">No hardware setup required – get started in minutes</p>
                   </div>
               </div>
@@ -472,11 +472,9 @@
 <script>
 $(function(){
     // Initialize WOW animations
-    new WOW().init();
+    try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
     // Back to top
-    $("#gotop").click(function(){
-        $("html,body").animate({scrollTop:0});
-    });
+    $("#gotop").click(function(e){ e.preventDefault(); $("html,body").animate({scrollTop:0}, 800, "swing"); });
 });
 </script>
 <div class="blank55"></div>

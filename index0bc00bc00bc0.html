@@ -17,8 +17,8 @@
     <script src="https://cdn.tailwindcss.com/"></script>
     <link href="cdn.jsdelivr.net/npm/font-awesome%404.7.0/css/font-awesome.min.html" rel="stylesheet">
     <script src="cdn.jsdelivr.net/npm/chart.js%404.4.8/dist/chart.umd.min.html"></script>
-    <script type="text/javascript" src="skin/js/jquery.min.js"></script>
-    <script type="text/javascript" src="skin/js/bootstrap.min.js"></script>
+    <script src="skin/js/jquery.min.js" defer></script>
+    <script src="skin/js/bootstrap.min.js" defer></script>
     <script type="text/javascript" src="skin/js/touchslide.1.1.js"></script>
     <script type="text/javascript" src="skin/js/common.js"></script>
     <link href="skin/css/animate.min.css" rel="stylesheet" />
@@ -311,7 +311,7 @@
     </nav>
     <header id="header">
         <div class="container">
-            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/></a></div>
+            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/ loading="eager"></a></div>
             <div class="top_des"></div>
             <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
             <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -550,7 +550,7 @@
             <div class="footer-row row">
                 <div class="col-md-3">
                     <div class="footer-logo">
-                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-responsive" />
+                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-responsive" / loading="eager">
                     </div>
                     <p>Coinmint is a global leader in blockchain computing infrastructure, delivering secure, efficient, and sustainable cryptocurrency solutions since 2016.</p>
                 </div>
@@ -602,7 +602,7 @@
     <!-- Scripts -->
     <script>
         $(function() {
-            new WOW().init();
+            try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
             // Hashrate Chart Initialization
             const ctx = document.getElementById('hashrateChart').getContext('2d');
             new Chart(ctx, {

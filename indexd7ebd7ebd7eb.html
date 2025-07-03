@@ -248,7 +248,7 @@
 </nav>
 <header id="header">
   <div class="container">
-    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/ loading="lazy" decoding="async"></a></div>
     <div class="top_des"></div>
     <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
     <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a> </div>
@@ -344,7 +344,7 @@
                       <div class="col-md-6 col-lg-3 mb-6">
                           <div class="sector-card wow fadeIn">
                               <div class="sector-img">
-                                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Industrial Mining Facilities">
+                                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Industrial Mining Facilities" loading="lazy" decoding="async">
                               </div>
                               <div class="sector-content">
                                   <div class="sector-icon">
@@ -357,7 +357,7 @@
                                       <li>Professional cooling & power management</li>
                                       <li>High-security physical environment</li>
                                   </ul>
-                                  <a class='btn btn-primary btn-sm' href='index82b382b382b3.html?xm1/'>Learn More</a>
+                                  <a class='btn btn-primary btn-sm' href='https://pc.coinmint.cc/'>Learn More</a>
                               </div>
                           </div>
                       </div>
@@ -365,7 +365,7 @@
                       <div class="col-md-6 col-lg-3 mb-6">
                           <div class="sector-card wow fadeIn" data-wow-delay="0.1s">
                               <div class="sector-img">
-                                  <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Cloud Mining Solutions">
+                                  <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Cloud Mining Solutions" loading="lazy" decoding="async">
                               </div>
                               <div class="sector-content">
                                   <div class="sector-icon">
@@ -378,7 +378,7 @@
                                       <li>Flexible contract durations</li>
                                       <li>Transparent daily earnings</li>
                                   </ul>
-                                  <a class='btn btn-primary btn-sm' href='index074d074d074d.html?xm2/'>Learn More</a>
+                                  <a class='btn btn-primary btn-sm' href='https://pc.coinmint.cc/'>Learn More</a>
                               </div>
                           </div>
                       </div>
@@ -386,7 +386,7 @@
                       <div class="col-md-6 col-lg-3 mb-6">
                           <div class="sector-card wow fadeIn" data-wow-delay="0.2s">
                               <div class="sector-img">
-                                  <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Crypto Trading Center">
+                                  <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Crypto Trading Center" loading="lazy" decoding="async">
                               </div>
                               <div class="sector-content">
                                   <div class="sector-icon">
@@ -399,7 +399,7 @@
                                       <li>Institutional-grade security</li>
                                       <li>Advanced trading tools</li>
                                   </ul>
-                                  <a class='btn btn-primary btn-sm' href='index686e686e686e.html?xm3/'>Trade Now</a>
+                                  <a class='btn btn-primary btn-sm' href='https://pc.coinmint.cc/'>Trade Now</a>
                               </div>
                           </div>
                       </div>
@@ -407,7 +407,7 @@
                       <div class="col-md-6 col-lg-3 mb-6">
                           <div class="sector-card wow fadeIn" data-wow-delay="0.3s">
                               <div class="sector-img">
-                                  <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Clean Energy Mining">
+                                  <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center" alt="Clean Energy Mining" loading="lazy" decoding="async">
                               </div>
                               <div class="sector-content">
                                   <div class="sector-icon">
@@ -420,7 +420,7 @@
                                       <li>Low-carbon mining solutions</li>
                                       <li>ESG-compliant operations</li>
                                   </ul>
-                                  <a class='btn btn-primary btn-sm' href='index4c5f4c5f4c5f.html?xm4/'>Learn More</a>
+                                  <a class='btn btn-primary btn-sm' href='https://pc.coinmint.cc/'>Learn More</a>
                               </div>
                           </div>
                       </div>
@@ -429,7 +429,7 @@
                       <div class="cta-content">
                           <h3 class="cta-title">Join Our Mining Ecosystem</h3>
                           <p class="mb-4">Whether you're an individual investor or institutional client, Coinmint has the right solution for your crypto mining needs.</p>
-                          <a href="https://direct.lc.chat/19126558/" class="btn btn-primary btn-lg">Get Started Today</a>
+                          <a href="https://pc.coinmint.cc/" class="btn btn-primary btn-lg">Get Started Today</a>
                       </div>
                   </div>
               </div>
@@ -459,11 +459,9 @@
 <script>
 $(function(){
     // Initialize WOW animations
-    new WOW().init();
+    try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
     // Back to top
-    $("#gotop").click(function(){
-        $("html,body").animate({scrollTop:0});
-    });
+    $("#gotop").click(function(e){ e.preventDefault(); $("html,body").animate({scrollTop:0}, 800, "swing"); });
 });
 </script>
 <div class="blank55"></div>

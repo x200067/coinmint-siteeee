@@ -231,7 +231,7 @@ body {
 <!-- 顶部导航 -->
 <header id="header">
   <div class="container">
-    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/ loading="lazy" decoding="async"></a></div>
     <div class="top_des"></div>
     <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
     <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -371,7 +371,7 @@ body {
             </div>
             <!-- 行动号召 -->
             <div class="text-center mt-8">
-              <a href="https://direct.lc.chat/19126558/" class="btn btn-primary btn-lg wow fadeIn">Connect with Our Team</a>
+              <a href="https://pc.coinmint.cc/" class="btn btn-primary btn-lg wow fadeIn">Connect with Our Team</a>
               <p class="mt-4 text-gray">Learn more about our leadership and partnership opportunities</p>
             </div>
           </div>
@@ -403,8 +403,8 @@ body {
 <div class="clear"></div>
 <script>
 $(function(){
-    new WOW().init(); // 初始化动画
-    $("#gotop").click(function(){ $("html,body").animate({scrollTop:0}); }); // 回到顶部
+    try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); } // 初始化动画
+    $("#gotop").click(function(e){ e.preventDefault(); $("html,body").animate({scrollTop:0}, 800, "swing"); }); // 回到顶部
 });
 </script>
 <div class="blank55"></div>

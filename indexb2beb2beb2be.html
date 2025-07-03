@@ -234,7 +234,7 @@
 </nav>
 <header id="header">
   <div class="container">
-    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/ loading="lazy" decoding="async"></a></div>
     <div class="top_des"></div>
     <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
     <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -498,7 +498,7 @@
                               </div>
                           </div>
                       </div>
-                      <a href="https://direct.lc.chat/19126558/" class="btn btn-primary mt-4 d-inline-block">Explore Partnership Opportunities</a>
+                      <a href="https://pc.coinmint.cc/" class="btn btn-primary mt-4 d-inline-block">Explore Partnership Opportunities</a>
                   </div>
               </div>
           </div>
@@ -525,7 +525,7 @@
 <script>
 $(function(){
     // 滚动动画触发
-    new WOW().init();
+    try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
     // 动态数据计数器
     function animateCounter(element, target, duration = 2000) {
         let start = 0;
@@ -552,9 +552,7 @@ $(function(){
         }
     });
     // 返回顶部
-    $("#gotop").click(function(){
-        $("html,body").animate({scrollTop:0});
-    });
+    $("#gotop").click(function(e){ e.preventDefault(); $("html,body").animate({scrollTop:0}, 800, "swing"); });
 });
 </script>
 <div class="blank55"></div>

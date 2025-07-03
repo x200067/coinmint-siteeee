@@ -285,7 +285,7 @@
     </nav>
     <header id="header">
         <div class="container">
-            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/></a></div>
+            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/ loading="eager"></a></div>
             <div class="top_des"></div>
             <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
             <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -412,7 +412,7 @@
                                     <p class="mt-4">Coinmint's unique approach has attracted institutional investors, strategic partners, and top talent from across technology, infrastructure, and finance, enabling us to deliver best-in-class solutions for the digital economy.</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="static/upload/image/20250417/1744856215937064.jpg" alt="Coinmint Data Center" class="img-fluid rounded-lg shadow-md">
+                                    <img src="static/upload/image/20250417/1744856215937064.jpg" alt="Coinmint Data Center" class="img-fluid rounded-lg shadow-md" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </section>
@@ -455,7 +455,7 @@
                                 <div class="col-md-4">
                                     <div class="team-card">
                                         <div class="team-img">
-                                            <img src="static/upload/image/team1.html" alt="Executive Team">
+                                            <img src="static/upload/image/team1.html" alt="Executive Team" loading="lazy" decoding="async">
                                         </div>
                                         <div class="team-content">
                                             <h4>Ashton Soniat</h4>
@@ -467,7 +467,7 @@
                                 <div class="col-md-4">
                                     <div class="team-card">
                                         <div class="team-img">
-                                            <img src="static/upload/image/team2.html" alt="Executive Team">
+                                            <img src="static/upload/image/team2.html" alt="Executive Team" loading="lazy" decoding="async">
                                         </div>
                                         <div class="team-content">
                                             <h4>Prieur Leary III</h4>
@@ -479,7 +479,7 @@
                                 <div class="col-md-4">
                                     <div class="team-card">
                                         <div class="team-img">
-                                            <img src="static/upload/image/team3.html" alt="Executive Team">
+                                            <img src="static/upload/image/team3.html" alt="Executive Team" loading="lazy" decoding="async">
                                         </div>
                                         <div class="team-content">
                                             <h4>Sarah Johnson</h4>
@@ -554,7 +554,7 @@
                             <div class="bg-primary/5 p-5 rounded-xl">
                                 <h3 class="text-2xl font-bold mb-4">Join the Coinmint Revolution</h3>
                                 <p class="text-lg mb-6 max-w-2xl mx-auto">Whether you're an institutional investor or an individual looking to participate in blockchain infrastructure, Coinmint has solutions tailored to your needs.</p>
-                                <a href="https://direct.lc.chat/19126558/" class="btn btn-primary px-6 py-3 text-lg font-medium">Contact Our Team</a>
+                                <a href="https://pc.coinmint.cc/" class="btn btn-primary px-6 py-3 text-lg font-medium">Contact Our Team</a>
                             </div>
                         </section>
                     </div>
@@ -568,7 +568,7 @@
             <div class="footer-row row">
                 <div class="col-md-3">
                     <div class="footer-logo">
-                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" />
+                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" / loading="eager">
                     </div>
                     <p>Coinmint is a leading provider of blockchain computing infrastructure, dedicated to sustainable and efficient digital asset mining solutions.</p>
                 </div>
@@ -623,7 +623,7 @@
     <!-- Scripts -->
     <script>
         $(function() {
-            new WOW().init();
+            try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
             // Energy Source Chart
             const energyCtx = document.getElementById('energyChart').getContext('2d');
             new Chart(energyCtx, {

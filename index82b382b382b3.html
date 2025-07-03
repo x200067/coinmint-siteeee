@@ -15,10 +15,11 @@
 <title>Industrial Bitcoin Mining | Coinmint - Leading Blockchain Infrastructure Provider</title>
 <meta name="keywords" content="industrial mining, Bitcoin mining, hydropower mining, ASIC mining, mining infrastructure">
 <meta name="description" content="Coinmint operates industrial-scale Bitcoin mining facilities in the US, leveraging hydropower to convert energy into digital assets with efficient, sustainable operations.">
-<link href="skin/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link rel="preload" href="skin/css/bootstrap.min.css" as="style">
+<link href="skin/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 <link href="skin/css/style.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="skin/js/jquery.min.js"></script>
-<script type="text/javascript" src="skin/js/bootstrap.min.js"></script>
+<script src="skin/js/jquery.min.js" defer></script>
+<script src="skin/js/bootstrap.min.js" defer></script>
 <script type="text/javascript" src="skin/js/touchslide.1.1.js"></script>
 <script type="text/javascript" src="skin/js/common.js"></script>
 <!--[if (gt IE 9)|!(IE)]><!-->
@@ -164,7 +165,7 @@
 </nav>
 <header id="header">
   <div class="container">
-    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/></a></div>
+    <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg"/ loading="lazy" decoding="async"></a></div>
     <div class="top_des"></div>
     <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
     <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a> </div>
@@ -433,9 +434,7 @@
 <script>
 $(function(){
 //返回顶部
-$("#gotop").click(function(){
-$("html,body").animate({scrollTop:0});
-});
+$("#gotop").click(function(e){ e.preventDefault(); $("html,body").animate({scrollTop:0}, 800, "swing"); });
 });
 </script>
 <div class="blank55"></div>

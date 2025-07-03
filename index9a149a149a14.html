@@ -195,7 +195,7 @@
     </nav>
     <header id="header">
         <div class="container">
-            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/></a></div>
+            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/ loading="eager"></a></div>
             <div class="top_des"></div>
             <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
             <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -304,7 +304,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="static/upload/other/20250601/team-meeting.html" alt="Coinmint Team" class="team-photo w-100 h-64 object-cover">
+                                    <img src="static/upload/other/20250601/team-meeting.html" alt="Coinmint Team" class="team-photo w-100 h-64 object-cover" loading="lazy" decoding="async">
                                     <p class="mt-3 text-center text-sm text-gray-600">Coinmint team members at our Massena facility</p>
                                     <div class="testimonial-card mt-4">
                                         <p>"Working at Coinmint means being at the intersection of technology, energy, and finance. The team's dedication to sustainable innovation makes every day exciting and challenging."</p>
@@ -510,7 +510,7 @@
             <div class="footer-row row">
                 <div class="col-md-3">
                     <div class="footer-logo">
-                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" />
+                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" / loading="eager">
                     </div>
                     <p>Coinmint is a leading provider of sustainable blockchain infrastructure, driving innovation in digital asset mining and cloud computing.</p>
                 </div>
@@ -564,7 +564,7 @@
     <!-- Scripts -->
     <script>
         $(function() {
-            new WOW().init();
+            try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
             // Smooth scroll
             $('a[href^="#"]').on('click', function(e) {
                 e.preventDefault();

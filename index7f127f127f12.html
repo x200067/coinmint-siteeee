@@ -217,7 +217,7 @@
     </nav>
     <header id="header">
         <div class="container">
-            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/></a></div>
+            <div id="logo"><a href='index-2.html'><img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo"/ loading="eager"></a></div>
             <div class="top_des"></div>
             <div class="tel"><span class="a"></span><span class="b">coinmintcc@gmail.com</span></div>
             <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -353,7 +353,7 @@
                                             <li>Daily BTC/USDT payouts</li>
                                             <li>No hardware management required</li>
                                         </ul>
-                                        <a class='btn btn-primary mt-4 w-100' href='index5b675b675b67.html?rh1/'>Learn More</a>
+                                        <a class='btn btn-primary mt-4 w-100' href='https://pc.coinmint.cc/'>Learn More</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -366,7 +366,7 @@
                                             <li>$0.03/kWh clean energy</li>
                                             <li>24/7 professional maintenance</li>
                                         </ul>
-                                        <a class='btn btn-primary mt-4 w-100' href='indexdd9fdd9fdd9f.html?rh2/'>Learn More</a>
+                                        <a class='btn btn-primary mt-4 w-100' href='https://pc.coinmint.cc/'>Learn More</a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -379,7 +379,7 @@
                                             <li>Transparent cost structure</li>
                                             <li>Regulatory compliance support</li>
                                         </ul>
-                                        <a class='btn btn-primary mt-4 w-100' href='indexcd9ccd9ccd9c.html?rh5/'>Learn More</a>
+                                        <a class='btn btn-primary mt-4 w-100' href='https://pc.coinmint.cc/'>Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -511,7 +511,7 @@
                             <div class="bg-primary/5 p-5 rounded-xl">
                                 <h3 class="text-2xl font-bold mb-4">Start Your Mining Journey with Coinmint</h3>
                                 <p class="text-lg mb-6 max-w-2xl mx-auto">Whether you're an individual investor or an institution, our mining solutions provide secure, sustainable access to blockchain infrastructure. Contact us to discover the right solution for your needs.</p>
-                                <a href="https://direct.lc.chat/19126558/" class="btn btn-primary px-6 py-3 text-lg font-medium">Get Started</a>
+                                <a href="https://pc.coinmint.cc/" class="btn btn-primary px-6 py-3 text-lg font-medium">Get Started</a>
                             </div>
                         </section>
                     </div>
@@ -525,7 +525,7 @@
             <div class="footer-row row">
                 <div class="col-md-3">
                     <div class="footer-logo">
-                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" />
+                        <img src="static/upload/image/20250418/1744947578806756.jpg" alt="Coinmint Logo" class="img-fluid" / loading="eager">
                     </div>
                     <p>Coinmint provides institutional-grade blockchain infrastructure, combining clean energy with advanced mining solutions for sustainable digital asset investment.</p>
                 </div>
@@ -580,7 +580,7 @@
     <!-- Scripts -->
     <script>
         $(function() {
-            new WOW().init();
+            try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
             // Profit Calculator
             $("#calculateBtn").click(function() {
                 const hashrate = parseFloat($("#hashrate").val()) || 10;
