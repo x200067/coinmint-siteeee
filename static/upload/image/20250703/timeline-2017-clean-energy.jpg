@@ -1,0 +1,68 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0000CD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="damGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D3D3D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#696969;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#32CD32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="600" height="300" fill="url(#skyGradient3)"/>
+  
+  <!-- Water/river -->
+  <path d="M 0 180 Q 150 160 300 180 T 600 180 L 600 250 L 0 250 Z" fill="url(#waterGradient)"/>
+  
+  <!-- Hydroelectric dam -->
+  <path d="M 200 120 L 400 120 L 420 180 L 180 180 Z" fill="url(#damGradient)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Dam turbine house -->
+  <rect x="250" y="100" width="100" height="80" fill="url(#damGradient)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Water flow -->
+  <path d="M 300 180 Q 320 190 340 180 Q 360 170 380 180" stroke="#4169E1" stroke-width="8" fill="none"/>
+  <path d="M 300 190 Q 320 200 340 190 Q 360 180 380 190" stroke="#4169E1" stroke-width="6" fill="none"/>
+  
+  <!-- Power transmission lines -->
+  <line x1="100" y1="60" x2="500" y2="60" stroke="#000" stroke-width="4"/>
+  <circle cx="200" cy="60" r="6" fill="#8B4513"/>
+  <circle cx="300" cy="60" r="6" fill="#8B4513"/>
+  <circle cx="400" cy="60" r="6" fill="#8B4513"/>
+  
+  <!-- Power lines to facility -->
+  <line x1="300" y1="60" x2="300" y2="100" stroke="#000" stroke-width="3"/>
+  
+  <!-- Green energy symbols -->
+  <circle cx="450" cy="100" r="25" fill="url(#greenGradient)" stroke="#000" stroke-width="2"/>
+  <text x="450" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFF">♻</text>
+  
+  <circle cx="500" cy="130" r="20" fill="url(#greenGradient)" stroke="#000" stroke-width="2"/>
+  <text x="500" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFF">🌱</text>
+  
+  <!-- Lightning bolt (clean energy) -->
+  <path d="M 380 80 L 390 95 L 385 95 L 395 110 L 385 95 L 390 95 L 380 80" fill="#FFD700" stroke="#000" stroke-width="1"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="600" height="50" fill="#228B22"/>
+  
+  <!-- Trees -->
+  <circle cx="80" cy="230" r="20" fill="#228B22"/>
+  <rect x="75" y="230" width="10" height="20" fill="#8B4513"/>
+  
+  <circle cx="520" cy="230" r="25" fill="#228B22"/>
+  <rect x="515" y="230" width="10" height="20" fill="#8B4513"/>
+  
+  <!-- Title text -->
+  <text x="300" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000">2017: Clean Energy Integration</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#696969;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2F4F4F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bitcoinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F7931A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="600" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="600" height="50" fill="#228B22"/>
+  
+  <!-- Abandoned factory building -->
+  <rect x="50" y="120" width="200" height="130" fill="url(#buildingGradient)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Factory windows (broken/dark) -->
+  <rect x="70" y="140" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="110" y="140" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="150" y="140" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="190" y="140" width="25" height="30" fill="#1a1a1a"/>
+  
+  <rect x="70" y="180" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="110" y="180" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="150" y="180" width="25" height="30" fill="#1a1a1a"/>
+  <rect x="190" y="180" width="25" height="30" fill="#1a1a1a"/>
+  
+  <!-- Factory chimney -->
+  <rect x="200" y="80" width="30" height="70" fill="url(#buildingGradient)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Bitcoin symbol floating above -->
+  <circle cx="400" cy="100" r="40" fill="url(#bitcoinGradient)" stroke="#000" stroke-width="3"/>
+  <text x="400" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#000">₿</text>
+  
+  <!-- Vision rays -->
+  <line x1="360" y1="100" x2="280" y2="120" stroke="#FFD700" stroke-width="3" opacity="0.7"/>
+  <line x1="370" y1="80" x2="290" y2="100" stroke="#FFD700" stroke-width="3" opacity="0.7"/>
+  <line x1="380" y1="120" x2="300" y2="140" stroke="#FFD700" stroke-width="3" opacity="0.7"/>
+  
+  <!-- Title text -->
+  <text x="300" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000">2015: The Birth of a Vision</text>
+</svg>

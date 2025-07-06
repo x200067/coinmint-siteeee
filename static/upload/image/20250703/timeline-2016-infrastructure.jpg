@@ -1,0 +1,64 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2F4F4F;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="craneGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="600" height="300" fill="url(#skyGradient2)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="600" height="50" fill="#8B4513"/>
+  
+  <!-- Building under construction -->
+  <rect x="100" y="120" width="180" height="130" fill="url(#buildingGradient2)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Construction scaffolding -->
+  <rect x="90" y="110" width="10" height="140" fill="#C0C0C0"/>
+  <rect x="290" y="110" width="10" height="140" fill="#C0C0C0"/>
+  <rect x="90" y="110" width="210" height="10" fill="#C0C0C0"/>
+  <rect x="90" y="160" width="210" height="5" fill="#C0C0C0"/>
+  <rect x="90" y="200" width="210" height="5" fill="#C0C0C0"/>
+  
+  <!-- Construction crane -->
+  <rect x="350" y="50" width="8" height="200" fill="url(#craneGradient)"/>
+  <rect x="320" y="50" width="80" height="8" fill="url(#craneGradient)"/>
+  <rect x="390" y="50" width="60" height="8" fill="url(#craneGradient)"/>
+  
+  <!-- Crane hook -->
+  <line x1="420" y1="58" x2="420" y2="100" stroke="#000" stroke-width="2"/>
+  <rect x="415" y="100" width="10" height="8" fill="#FF0000"/>
+  
+  <!-- Power lines -->
+  <line x1="50" y1="80" x2="550" y2="80" stroke="#000" stroke-width="4"/>
+  <circle cx="150" cy="80" r="5" fill="#8B4513"/>
+  <circle cx="300" cy="80" r="5" fill="#8B4513"/>
+  <circle cx="450" cy="80" r="5" fill="#8B4513"/>
+  
+  <!-- Workers (simple figures) -->
+  <circle cx="120" cy="235" r="8" fill="#FFE4C4"/>
+  <rect x="115" y="243" width="10" height="15" fill="#0000FF"/>
+  <rect x="117" y="258" width="6" height="12" fill="#000"/>
+  
+  <circle cx="200" cy="235" r="8" fill="#FFE4C4"/>
+  <rect x="195" y="243" width="10" height="15" fill="#FF0000"/>
+  <rect x="197" y="258" width="6" height="12" fill="#000"/>
+  
+  <!-- Mining equipment boxes -->
+  <rect x="320" y="220" width="40" height="30" fill="#696969" stroke="#000" stroke-width="1"/>
+  <rect x="380" y="220" width="40" height="30" fill="#696969" stroke="#000" stroke-width="1"/>
+  <rect x="440" y="220" width="40" height="30" fill="#696969" stroke="#000" stroke-width="1"/>
+  
+  <!-- Title text -->
+  <text x="300" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000">2016: Infrastructure Development</text>
+</svg>
