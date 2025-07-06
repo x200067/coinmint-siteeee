@@ -122,6 +122,107 @@
             padding: 30px;
             margin: 30px 0;
         }
+        .investment-cycle-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 16px;
+            padding: 0;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            color: white;
+        }
+        .investment-cycle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        .cycle-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cycle-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+        }
+        .cycle-badge {
+            background: #f39c12;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .cycle-body {
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .yield-rate {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+        .yield-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+        .pledge-amount {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+        .pledge-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+        .output-currency {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+        .cycle-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .cycle-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .cycle-input:focus {
+            outline: none;
+            border-color: #f39c12;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .btn-buy-now {
+            width: 100%;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-buy-now:hover {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+            transform: translateY(-2px);
+        }
         @media (max-width: 768px) {
             .hero-banner {
                 height: 250px;
@@ -412,48 +513,194 @@
                                 </div>
                             </div>
                         </section>
-                        <!-- Profit Calculation -->
+                        <!-- Investment Cycles -->
                         <section class="mb-8">
-                            <h2 class="section-title text-2xl font-bold mb-5">Mining Profit Calculation</h2>
-                            <p>Understanding mining profitability is key to making informed investment decisions. Here's a simplified overview of how earnings are calculated:</p>
-                            <div class="calculator-card">
-                                <h4 class="mb-4">Hashrate Profit Calculator</h4>
+                            <h2 class="section-title text-2xl font-bold mb-5">Investment Cycles</h2>
+                            <p>Choose from our flexible investment cycles with competitive yield rates. Each cycle offers different returns based on the investment period:</p>
+
+                            <!-- Investment Calculator -->
+                            <div class="calculator-card mb-6">
+                                <h4 class="mb-4">Investment Calculator</h4>
                                 <div class="row mb-4">
-                                    <div class="col-md-4">
-                                        <label for="hashrate" class="block mb-2">Hashrate (TH/s)</label>
-                                        <input type="number" id="hashrate" value="10" class="w-100 p-2 border rounded">
+                                    <div class="col-md-6">
+                                        <label for="investAmount" class="block mb-2">Investment Amount (USDT)</label>
+                                        <input type="number" id="investAmount" value="1000" min="100" class="w-100 p-2 border rounded">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="price" class="block mb-2">BTC Price ($)</label>
-                                        <input type="number" id="price" value="40000" class="w-100 p-2 border rounded">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="difficulty" class="block mb-2">Mining Difficulty</label>
-                                        <input type="number" id="difficulty" value="50" class="w-100 p-2 border rounded">
+                                    <div class="col-md-6">
+                                        <label for="investCycle" class="block mb-2">Investment Cycle</label>
+                                        <select id="investCycle" class="w-100 p-2 border rounded">
+                                            <option value="3">3 Days - 0.1534%</option>
+                                            <option value="7">7 Days - 0.1612%</option>
+                                            <option value="15">15 Days - 0.1687%</option>
+                                            <option value="30">30 Days - 0.1831%</option>
+                                            <option value="90">90 Days - 0.1969%</option>
+                                            <option value="180">180 Days - 0.2099%</option>
+                                            <option value="360">360 Days - 0.2224%</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <button id="calculateBtn" class="btn btn-primary mb-4">Calculate Daily Earnings</button>
-                                <div id="result" class="p-3 bg-white rounded mt-4 hidden">
-                                    <h5 class="font-bold">Daily Earnings:</h5>
-                                    <p id="earnings" class="text-2xl font-bold text-primary">$0.00</p>
-                                    <p class="text-sm text-gray-600 mt-1">Based on current network conditions</p>
+                                <button id="calculateInvestBtn" class="btn btn-primary mb-4">Calculate Returns</button>
+                                <div id="investResult" class="p-3 bg-white rounded mt-4 hidden">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="font-bold">Daily Yield:</h6>
+                                            <p id="dailyYield" class="text-lg font-bold text-primary">0.00 USDT</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="font-bold">Total Return:</h6>
+                                            <p id="totalReturn" class="text-lg font-bold text-success">0.00 USDT</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="font-bold">Final Amount:</h6>
+                                            <p id="finalAmount" class="text-lg font-bold text-info">0.00 USDT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Investment Cycle Cards -->
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">3 Days</h5>
+                                            <span class="cycle-badge">Short Term</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.1534%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">7 Days</h5>
+                                            <span class="cycle-badge">Popular</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.1612%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">15 Days</h5>
+                                            <span class="cycle-badge">Recommended</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.1687%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">30 Days</h5>
+                                            <span class="cycle-badge">Standard</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.1831%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">90 Days</h5>
+                                            <span class="cycle-badge">Long Term</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.1969%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">180 Days</h5>
+                                            <span class="cycle-badge">Premium</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.2099%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="investment-cycle-card">
+                                        <div class="cycle-header">
+                                            <h5 class="cycle-title">360 Days</h5>
+                                            <span class="cycle-badge">Maximum</span>
+                                        </div>
+                                        <div class="cycle-body">
+                                            <div class="yield-rate">0.2224%</div>
+                                            <div class="yield-label">Daily Yield Rate</div>
+                                            <div class="pledge-amount">1,000,000 USDT</div>
+                                            <div class="pledge-label">Pledge Quantity</div>
+                                            <div class="output-currency">USDT</div>
+                                            <input type="number" placeholder="Please enter quantity" class="cycle-input">
+                                            <button class="btn-buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-6">
                                 <div class="col-md-6">
-                                    <h4 class="mb-3"><i class="fa fa-list mr-3 text-primary"></i>Key Profit Factors</h4>
+                                    <h4 class="mb-3"><i class="fa fa-list mr-3 text-primary"></i>Key Investment Benefits</h4>
                                     <ul class="list-disc pl-5 space-y-2">
-                                        <li>Hashrate: The higher your hashrate, the more you can earn</li>
-                                        <li>BTC Price: Earnings are directly influenced by market price</li>
-                                        <li>Mining Difficulty: Increases over time, affecting profitability</li>
-                                        <li>Energy Cost: Our $0.03/kWh rate provides a significant advantage</li>
-                                        <li>Equipment Efficiency: Modern ASICs offer better cost-performance</li>
+                                        <li>Flexible Terms: Choose from 3 days to 360 days investment cycles</li>
+                                        <li>Competitive Rates: Higher yields for longer investment periods</li>
+                                        <li>Daily Returns: Earn consistent daily yields on your investment</li>
+                                        <li>USDT Stability: All investments and returns in stable USDT</li>
+                                        <li>Transparent Calculation: Clear and predictable return structure</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
-                                    <h4 class="mb-3"><i class="fa fa-line-chart mr-3 text-primary"></i>Hashrate vs. Earnings</h4>
+                                    <h4 class="mb-3"><i class="fa fa-bar-chart mr-3 text-primary"></i>Investment Cycle Comparison</h4>
                                     <div class="chart-container" style="height: 250px;">
-                                        <canvas id="profitChart"></canvas>
+                                        <canvas id="investmentChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -582,29 +829,75 @@
     <script>
         $(function() {
             try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
-            // Profit Calculator
-            $("#calculateBtn").click(function() {
-                const hashrate = parseFloat($("#hashrate").val()) || 10;
-                const price = parseFloat($("#price").val()) || 40000;
-                const difficulty = parseFloat($("#difficulty").val()) || 50;
-                // Simplified calculation formula (for demo purposes)
-                const dailyEarnings = (hashrate * price * 0.000000001) / difficulty * 10;
-                $("#earnings").text("$" + dailyEarnings.toFixed(2));
-                $("#result").removeClass("hidden");
+            // Investment Calculator
+            const yieldRates = {
+                3: 0.001534,   // 0.1534%
+                7: 0.001612,   // 0.1612%
+                15: 0.001687,  // 0.1687%
+                30: 0.001831,  // 0.1831%
+                90: 0.001969,  // 0.1969%
+                180: 0.002099, // 0.2099%
+                360: 0.002224  // 0.2224%
+            };
+
+            $("#calculateInvestBtn").click(function() {
+                const amount = parseFloat($("#investAmount").val()) || 1000;
+                const cycle = parseInt($("#investCycle").val()) || 3;
+                const dailyRate = yieldRates[cycle];
+
+                const dailyYield = amount * dailyRate;
+                const totalReturn = dailyYield * cycle;
+                const finalAmount = amount + totalReturn;
+
+                $("#dailyYield").text(dailyYield.toFixed(4) + " USDT");
+                $("#totalReturn").text(totalReturn.toFixed(2) + " USDT");
+                $("#finalAmount").text(finalAmount.toFixed(2) + " USDT");
+                $("#investResult").removeClass("hidden");
             });
-            // Profit Chart
-            const profitCtx = document.getElementById('profitChart').getContext('2d');
-            new Chart(profitCtx, {
-                type: 'line',
+
+            // Buy Now button functionality
+            $(".btn-buy-now").click(function() {
+                const card = $(this).closest('.investment-cycle-card');
+                const cycleTitle = card.find('.cycle-title').text();
+                const inputAmount = card.find('.cycle-input').val();
+
+                if (!inputAmount || inputAmount <= 0) {
+                    alert('Please enter a valid investment amount');
+                    return;
+                }
+
+                alert(`Investment initiated:\nCycle: ${cycleTitle}\nAmount: ${inputAmount} USDT\n\nRedirecting to payment...`);
+                // Here you would typically redirect to a payment or registration page
+                // window.location.href = '/invest?cycle=' + cycleTitle + '&amount=' + inputAmount;
+            });
+            // Investment Chart
+            const investCtx = document.getElementById('investmentChart').getContext('2d');
+            new Chart(investCtx, {
+                type: 'bar',
                 data: {
-                    labels: ['10 TH/s', '50 TH/s', '100 TH/s', '200 TH/s', '500 TH/s'],
+                    labels: ['3 Days', '7 Days', '15 Days', '30 Days', '90 Days', '180 Days', '360 Days'],
                     datasets: [{
-                        label: 'Daily Earnings ($)',
-                        data: [2.5, 12.5, 25, 50, 125],
-                        borderColor: '#165DFF',
-                        backgroundColor: 'rgba(22, 93, 255, 0.1)',
-                        tension: 0.3,
-                        fill: true
+                        label: 'Daily Yield Rate (%)',
+                        data: [0.1534, 0.1612, 0.1687, 0.1831, 0.1969, 0.2099, 0.2224],
+                        backgroundColor: [
+                            'rgba(243, 156, 18, 0.8)',
+                            'rgba(52, 152, 219, 0.8)',
+                            'rgba(46, 204, 113, 0.8)',
+                            'rgba(155, 89, 182, 0.8)',
+                            'rgba(231, 76, 60, 0.8)',
+                            'rgba(230, 126, 34, 0.8)',
+                            'rgba(22, 160, 133, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(243, 156, 18, 1)',
+                            'rgba(52, 152, 219, 1)',
+                            'rgba(46, 204, 113, 1)',
+                            'rgba(155, 89, 182, 1)',
+                            'rgba(231, 76, 60, 1)',
+                            'rgba(230, 126, 34, 1)',
+                            'rgba(22, 160, 133, 1)'
+                        ],
+                        borderWidth: 2
                     }]
                 },
                 options: {
@@ -619,7 +912,7 @@
                             beginAtZero: true,
                             title: {
                                 display: true,
-                                text: 'Daily Earnings ($)'
+                                text: 'Daily Yield Rate (%)'
                             }
                         }
                     }
