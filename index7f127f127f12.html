@@ -420,7 +420,11 @@
 
                             <!-- Investment Calculator -->
                             <div class="calculator-card mb-6">
-                                <h4 class="mb-4">Investment Calculator</h4>
+                                <h4 class="mb-4">Investment Calculator (Compound Interest)</h4>
+                                <p class="text-sm text-gray-600 mb-3">
+                                    <i class="fa fa-info-circle mr-1"></i>
+                                    This calculator uses compound interest - daily earnings are added to your principal for the next day's calculation.
+                                </p>
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <label for="investAmount" class="block mb-2">Investment Amount (USDT)</label>
@@ -443,11 +447,11 @@
                                 <div id="investResult" class="p-3 bg-white rounded mt-4 hidden">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h6 class="font-bold">Daily Yield:</h6>
+                                            <h6 class="font-bold">Average Daily Yield:</h6>
                                             <p id="dailyYield" class="text-lg font-bold text-primary">0.00 USDT</p>
                                         </div>
                                         <div class="col-md-4">
-                                            <h6 class="font-bold">Total Return:</h6>
+                                            <h6 class="font-bold">Total Return (Compound):</h6>
                                             <p id="totalReturn" class="text-lg font-bold text-success">0.00 USDT</p>
                                         </div>
                                         <div class="col-md-4">
@@ -618,12 +622,21 @@
                 const cycle = parseInt($("#investCycle").val()) || 3;
                 const dailyRate = yieldRates[cycle];
 
-                const dailyYield = amount * dailyRate;
-                const totalReturn = dailyYield * cycle;
-                const finalAmount = amount + totalReturn;
+                // 复利计算 - 每天的收益加入本金
+                let currentAmount = amount;
+                let totalYield = 0;
 
-                $("#dailyYield").text(dailyYield.toFixed(4) + " USDT");
-                $("#totalReturn").text(totalReturn.toFixed(2) + " USDT");
+                for (let day = 1; day <= cycle; day++) {
+                    const dailyYield = currentAmount * dailyRate;
+                    totalYield += dailyYield;
+                    currentAmount += dailyYield;
+                }
+
+                const finalAmount = currentAmount;
+                const averageDailyYield = totalYield / cycle;
+
+                $("#dailyYield").text(averageDailyYield.toFixed(4) + " USDT (平均)");
+                $("#totalReturn").text(totalYield.toFixed(2) + " USDT");
                 $("#finalAmount").text(finalAmount.toFixed(2) + " USDT");
                 $("#investResult").removeClass("hidden");
             });
