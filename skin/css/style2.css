@@ -12,10 +12,10 @@
 }
 @media screen and (max-width: 760px) {
 #cd-lateral-nav {
-	display: block;
+	display: none;
 }
 #cd-menu-trigger {
-	display: block;
+	display: none;
 }
 .overflow-hidden {
 	overflow: hidden;

@@ -1377,7 +1377,11 @@ input, select {
 	margin: 12.5px 0;
 }
 #navigate {
-	display: none;
+	display: block;
+}
+#navigate ul li a {
+	font-size: 12px;
+	padding: 0 8px;
 }
 .service_item {
 	padding: 15px;
