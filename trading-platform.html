@@ -12,6 +12,208 @@
     <link href="skin/css/style.css" rel="stylesheet" />
     <link href="skin/css/style2.css" rel="stylesheet" />
 
+    <style>
+    /* Trading Platform Specific Styles */
+    .trading-hero {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+    }
+
+    .hero-features {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .feature-item i {
+        font-size: 1.5rem;
+        color: #ffd700;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 50px;
+    }
+
+    .services-grid, .features-grid {
+        margin-bottom: 60px;
+    }
+
+    .service-card, .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+
+    .service-card:hover, .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .service-icon, .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .service-icon i, .feature-icon i {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .service-card h4, .feature-card h4 {
+        text-align: center;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .service-card p, .feature-card p {
+        text-align: center;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .service-features {
+        list-style: none;
+        padding: 0;
+    }
+
+    .service-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        color: #555;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .service-features li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .additional-features {
+        margin-top: 60px;
+        padding-top: 60px;
+        border-top: 1px solid #eee;
+    }
+
+    .feature-highlight {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+
+    .feature-highlight h4 {
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .highlight-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .highlight-list li {
+        padding: 10px 0;
+        color: #555;
+        position: relative;
+        padding-left: 25px;
+    }
+
+    .highlight-list li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-features {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .service-card, .feature-card {
+            margin-bottom: 20px;
+        }
+
+        .feature-highlight {
+            padding: 30px 20px;
+        }
+    }
+
+    /* Container spacing improvements */
+    .container {
+        padding: 0 20px;
+    }
+
+    #trading-services, #platform-features {
+        padding: 60px 0;
+    }
+
+    .home_top {
+        margin-bottom: 50px;
+    }
+
+    .home_top h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    </style>
+
 </head>
 <body>
 <!-- Header Start -->
@@ -113,157 +315,163 @@
 <!-- Main Content Area -->
 <main id="main-content" role="main">
 <!-- Hero Section for Trading Platform -->
-<div id="flash">
-  <div id="slideBox" class="slideBox">
-    <div class="bd">
-      <ul>
-        <li>
-          <a href='https://pc.coinmint.cc/' target='_blank'><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Professional Trading Platform" loading="lazy" decoding="async" />
-          <div class="slide-text">
-            <h2>Professional Trading Platform</h2>
-            <p>Advanced cryptocurrency exchange with institutional-grade security</p>
-          </div></a>
-        </li>
-        <li>
-          <a href='https://pc.coinmint.cc/' target='_blank'><img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Secure Digital Trading" loading="lazy" decoding="async" />
-          <div class="slide-text">
-            <h2>Secure Digital Trading</h2>
-            <p>Multi-signature wallets and bank-level security protocols</p>
-          </div></a>
-        </li>
-        <li>
-          <a href='https://pc.coinmint.cc/' target='_blank'><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&w=1200&h=450&fit=crop&crop=center&auto=format&q=80" alt="Global Market Access" loading="lazy" decoding="async" />
-          <div class="slide-text">
-            <h2>Global Market Access</h2>
-            <p>24/7 trading with 50+ cryptocurrency pairs and deep liquidity</p>
-          </div></a>
-        </li>
-      </ul>
-    </div>
-    <div class="hd">
-      <div class='container'>
-        <ul></ul>
+<div id="hero-section" class="trading-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">专业数字货币交易平台</h1>
+      <p class="hero-subtitle">提供秒合约、永续合约、长期持有计划等多样化交易服务</p>
+      <div class="hero-features">
+        <div class="feature-item">
+          <i class="fa fa-bolt"></i>
+          <span>秒合约交易</span>
+        </div>
+        <div class="feature-item">
+          <i class="fa fa-infinity"></i>
+          <span>永续合约</span>
+        </div>
+        <div class="feature-item">
+          <i class="fa fa-calendar"></i>
+          <span>长期持有计划</span>
+        </div>
       </div>
-    </div>
-    <span class="prev"></span><span class="next"></span>
-  </div>
-</div>
-<div id="mobileflash">
-  <div id="adBox" class="slideBox">
-    <div class="bd">
-      <ul>
-        <li><a href="https://pc.coinmint.cc/" target="_blank" title="Trading Platform"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center&auto=format&q=80" alt="Trading Platform" loading="lazy" decoding="async"></a></li>
-        <li><a href='https://pc.coinmint.cc/' target="_blank" title="Secure Trading"><img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?ixlib=rb-4.0.3&w=800&h=200&fit=crop&crop=center&auto=format&q=80" alt="Secure Trading" loading="lazy" decoding="async"></a></li>
-      </ul>
-    </div>
-    <div class="hd">
-      <ul></ul>
+      <a class='btn btn-primary btn-lg' href='https://pc.coinmint.cc/' target='_blank'>立即开始交易</a>
     </div>
   </div>
 </div>
 
-<!-- Platform Overview -->
-<div id="about" class="container">
+<!-- Trading Services Overview -->
+<div id="trading-services" class="container">
   <div class="home_top wow fadeInUp">
-    <h3>About the Trading Platform</h3>
+    <h3>核心交易服务</h3>
+    <p class="section-subtitle">为不同投资需求提供专业的交易解决方案</p>
   </div>
-  <div class="about-con row">
-    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
-      <h4>Professional Cryptocurrency Exchange</h4>
-      <p>Coinmint's trading platform offers a comprehensive suite of cryptocurrency trading services designed for both individual and institutional investors. Our platform combines cutting-edge technology, robust security measures, and user-friendly interfaces to provide an optimal trading experience.</p>
-      <p>With advanced security protocols, professional trading tools, and 24/7 global market access, we deliver institutional-grade services for all types of traders.</p>
-      <a class='btn btn-primary' href='https://pc.coinmint.cc/' target='_blank'>Access Trading Platform</a>
+
+  <!-- Trading Services Grid -->
+  <div class="services-grid">
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card wow fadeInUp" data-wow-delay=".2s">
+        <div class="service-icon">
+          <i class="fa fa-bolt"></i>
+        </div>
+        <h4>秒合约交易</h4>
+        <p>超短期合约交易，支持30秒到5分钟的快速交易周期，适合短线投资者获取快速收益。</p>
+        <ul class="service-features">
+          <li>30秒-5分钟交易周期</li>
+          <li>高频交易支持</li>
+          <li>实时价格更新</li>
+          <li>快速结算系统</li>
+        </ul>
+      </div>
     </div>
-    <div class="col-md-6 wow fadeInRight" data-wow-delay=".4s">
-      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&w=600&h=400&fit=crop&crop=center&auto=format&q=80" class="img-responsive" alt="Professional Trading Interface" style="border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);" loading="lazy" decoding="async" />
+
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card wow fadeInUp" data-wow-delay=".4s">
+        <div class="service-icon">
+          <i class="fa fa-infinity"></i>
+        </div>
+        <h4>永续合约</h4>
+        <p>无到期日的衍生品合约，支持多空双向交易，提供高杠杆和灵活的风险管理工具。</p>
+        <ul class="service-features">
+          <li>无到期日限制</li>
+          <li>多空双向交易</li>
+          <li>灵活杠杆选择</li>
+          <li>资金费率机制</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="service-card wow fadeInUp" data-wow-delay=".6s">
+        <div class="service-icon">
+          <i class="fa fa-calendar"></i>
+        </div>
+        <h4>长期持有计划</h4>
+        <p>专为长期投资者设计的持有计划，提供稳定收益和复利增长机会。</p>
+        <ul class="service-features">
+          <li>定期收益分配</li>
+          <li>复利增长模式</li>
+          <li>风险分散投资</li>
+          <li>专业资产管理</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 <div class="clear"></div>
 
 <!-- Platform Features -->
-<div id="features" class="container">
+<div id="platform-features" class="container">
   <div class="home_top wow fadeInUp">
-    <h3>Platform Features</h3>
+    <h3>平台核心优势</h3>
+    <p class="section-subtitle">专业技术与安全保障，为您的交易保驾护航</p>
   </div>
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay=".2s">
-        <i class="fa fa-shield"></i>
-        <h4>Advanced Security</h4>
-        <p>Multi-signature wallets, cold storage, and bank-level security protocols to protect your digital assets with institutional-grade protection.</p>
-        <ul class="feature-list">
-          <li>Multi-signature wallet technology</li>
-          <li>Cold storage for digital assets</li>
-          <li>Bank-level security protocols</li>
-          <li>Real-time fraud detection</li>
-        </ul>
+
+  <div class="features-grid">
+    <div class="col-md-3 col-sm-6">
+      <div class="feature-card wow fadeInUp" data-wow-delay=".2s">
+        <div class="feature-icon">
+          <i class="fa fa-shield"></i>
+        </div>
+        <h4>银行级安全</h4>
+        <p>多重签名钱包、冷存储技术和银行级安全协议，全方位保护您的数字资产安全。</p>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay=".4s">
-        <i class="fa fa-line-chart"></i>
-        <h4>Professional Trading Tools</h4>
-        <p>Advanced charting, technical analysis indicators, real-time market data, and professional trading interfaces for optimal decision-making.</p>
-        <ul class="feature-list">
-          <li>Advanced charting and technical analysis</li>
-          <li>Real-time market data feeds</li>
-          <li>Professional trading interfaces</li>
-          <li>Automated trading capabilities</li>
-        </ul>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="feature-card wow fadeInUp" data-wow-delay=".4s">
+        <div class="feature-icon">
+          <i class="fa fa-flash"></i>
+        </div>
+        <h4>极速执行</h4>
+        <p>毫秒级订单执行，低延迟交易引擎，确保您不错过任何市场机会。</p>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay=".6s">
-        <i class="fa fa-flash"></i>
-        <h4>High-Speed Execution</h4>
-        <p>Lightning-fast order execution with low latency trading engine, ensuring you never miss market opportunities.</p>
-        <ul class="feature-list">
-          <li>Sub-10ms order execution</li>
-          <li>Low latency trading engine</li>
-          <li>High-frequency trading support</li>
-          <li>99.9% uptime guarantee</li>
-        </ul>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="feature-card wow fadeInUp" data-wow-delay=".6s">
+        <div class="feature-icon">
+          <i class="fa fa-line-chart"></i>
+        </div>
+        <h4>专业工具</h4>
+        <p>高级图表分析、技术指标、实时市场数据，专业交易界面助您精准决策。</p>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="feature-card wow fadeInUp" data-wow-delay=".8s">
+        <div class="feature-icon">
+          <i class="fa fa-globe"></i>
+        </div>
+        <h4>全球市场</h4>
+        <p>50+加密货币交易对，深度流动性，24/7全球市场准入，竞争性价差。</p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay=".8s">
-        <i class="fa fa-globe"></i>
-        <h4>Global Market Access</h4>
-        <p>Trade major cryptocurrencies including Bitcoin, Ethereum, and other digital assets with competitive spreads and deep liquidity.</p>
-        <ul class="feature-list">
-          <li>50+ cryptocurrency trading pairs</li>
-          <li>Deep liquidity pools</li>
-          <li>Competitive spreads</li>
-          <li>24/7 global market access</li>
+
+  <!-- Additional Features -->
+  <div class="additional-features">
+    <div class="col-md-6">
+      <div class="feature-highlight wow fadeInLeft" data-wow-delay="1s">
+        <h4>机构级服务</h4>
+        <p>专属客户经理、API接口、白标解决方案，为机构投资者提供定制化服务。</p>
+        <ul class="highlight-list">
+          <li>专属客户经理服务</li>
+          <li>RESTful和WebSocket API</li>
+          <li>白标解决方案</li>
+          <li>机构托管服务</li>
         </ul>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay="1s">
-        <i class="fa fa-building"></i>
-        <h4>Institutional Services</h4>
-        <p>Dedicated account management, API access, and institutional-grade services for high-volume traders and organizations.</p>
-        <ul class="feature-list">
-          <li>Dedicated account management</li>
-          <li>RESTful and WebSocket APIs</li>
-          <li>White-label solutions</li>
-          <li>Institutional custody services</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="value-card wow fadeInUp" data-wow-delay="1.2s">
-        <i class="fa fa-mobile"></i>
-        <h4>Multi-Platform Access</h4>
-        <p>Trade seamlessly across web, mobile, and desktop platforms with synchronized accounts and real-time portfolio tracking.</p>
-        <ul class="feature-list">
-          <li>Web-based trading platform</li>
-          <li>Mobile apps for iOS and Android</li>
-          <li>Desktop trading applications</li>
-          <li>Synchronized portfolio tracking</li>
+
+    <div class="col-md-6">
+      <div class="feature-highlight wow fadeInRight" data-wow-delay="1.2s">
+        <h4>多平台支持</h4>
+        <p>网页、手机、桌面端无缝交易，账户同步，实时投资组合跟踪。</p>
+        <ul class="highlight-list">
+          <li>网页交易平台</li>
+          <li>iOS和Android应用</li>
+          <li>桌面交易软件</li>
+          <li>同步投资组合跟踪</li>
         </ul>
       </div>
     </div>

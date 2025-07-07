@@ -56,6 +56,112 @@
     .text-primary {
         color: #007bff !important;
     }
+
+    /* Trading Platform Styles for Homepage */
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    .trading-services-overview {
+        margin-bottom: 50px;
+    }
+
+    .service-preview {
+        background: white;
+        border-radius: 12px;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        height: 100%;
+    }
+
+    .service-preview:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .service-preview .service-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .service-preview .service-icon i {
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .service-preview h4 {
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .service-preview p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .learn-more {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .learn-more:hover {
+        color: #0056b3;
+        text-decoration: none;
+    }
+
+    .platform-summary {
+        padding-top: 40px;
+        border-top: 1px solid #eee;
+    }
+
+    .platform-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+    }
+
+    .highlight-item:hover {
+        background: #e9ecef;
+    }
+
+    .highlight-item i {
+        font-size: 1.5rem;
+        color: #007bff;
+        width: 30px;
+        text-align: center;
+    }
+
+    .highlight-item span {
+        font-weight: 500;
+        color: #333;
+    }
 </style>
 
 <!-- Non-critical JavaScript (defer loading) -->
@@ -730,44 +836,71 @@
 <div id="trading-platform" class="container">
   <div class="home_top wow fadeInUp">
     <h3>About the Trading Platform</h3>
-
+    <p class="section-subtitle">专业数字货币交易平台，提供多样化交易服务</p>
   </div>
-  <div class="about-con row">
-    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
-      <h4>Professional Cryptocurrency Trading</h4>
-      <p>Coinmint's advanced trading platform provides institutional-grade cryptocurrency trading services with professional tools and secure infrastructure. Our platform combines cutting-edge technology with regulatory compliance to deliver a superior trading experience.</p>
-      <p>Experience 24/7 trading access with high liquidity, competitive spreads, and multi-layer security protocols designed for both individual and institutional traders.</p>
-      <a class='btn btn-primary' href='https://pc.coinmint.cc/' target='_blank'>Access Trading Platform</a>
+
+  <!-- Trading Services Overview -->
+  <div class="trading-services-overview">
+    <div class="col-md-4 col-sm-6">
+      <div class="service-preview wow fadeInUp" data-wow-delay=".2s">
+        <div class="service-icon">
+          <i class="fa fa-bolt"></i>
+        </div>
+        <h4>秒合约交易</h4>
+        <p>30秒到5分钟的超短期合约交易，适合快速获利的短线投资者。</p>
+        <a href="trading-platform.html" class="learn-more">了解更多 →</a>
+      </div>
     </div>
-    <div class="col-md-6 wow fadeInRight" data-wow-delay=".4s">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="feature-highlight">
-            <i class="fa fa-shield fa-2x text-primary mb-2"></i>
-            <h5>Secure Trading</h5>
-            <p>Multi-layer security with cold storage protection</p>
-          </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="service-preview wow fadeInUp" data-wow-delay=".4s">
+        <div class="service-icon">
+          <i class="fa fa-infinity"></i>
         </div>
-        <div class="col-sm-6">
-          <div class="feature-highlight">
-            <i class="fa fa-line-chart fa-2x text-primary mb-2"></i>
-            <h5>Professional Tools</h5>
-            <p>Advanced charting and real-time market data</p>
-          </div>
+        <h4>永续合约</h4>
+        <p>无到期日的衍生品合约，支持多空双向交易和灵活杠杆选择。</p>
+        <a href="trading-platform.html" class="learn-more">了解更多 →</a>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="service-preview wow fadeInUp" data-wow-delay=".6s">
+        <div class="service-icon">
+          <i class="fa fa-calendar"></i>
         </div>
-        <div class="col-sm-6">
-          <div class="feature-highlight">
-            <i class="fa fa-clock-o fa-2x text-primary mb-2"></i>
-            <h5>24/7 Trading</h5>
-            <p>Round-the-clock access with high liquidity</p>
-          </div>
+        <h4>长期持有计划</h4>
+        <p>专为长期投资者设计，提供稳定收益和复利增长机会。</p>
+        <a href="trading-platform.html" class="learn-more">了解更多 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Platform Features Summary -->
+  <div class="platform-summary">
+    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".8s">
+      <h4>专业交易平台</h4>
+      <p>Coinmint交易平台结合尖端技术与银行级安全保障，为个人和机构投资者提供专业的数字货币交易服务。</p>
+      <p>24/7全球市场准入，高流动性，竞争性价差，多层安全协议保护您的数字资产。</p>
+      <a class='btn btn-primary' href='https://pc.coinmint.cc/' target='_blank'>立即开始交易</a>
+    </div>
+
+    <div class="col-md-6 wow fadeInRight" data-wow-delay="1s">
+      <div class="platform-highlights">
+        <div class="highlight-item">
+          <i class="fa fa-shield"></i>
+          <span>银行级安全保障</span>
         </div>
-        <div class="col-sm-6">
-          <div class="feature-highlight">
-            <i class="fa fa-users fa-2x text-primary mb-2"></i>
-            <h5>Institutional Support</h5>
-            <p>Dedicated services for high-volume traders</p>
-          </div>
+        <div class="highlight-item">
+          <i class="fa fa-flash"></i>
+          <span>毫秒级订单执行</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-globe"></i>
+          <span>50+交易对支持</span>
+        </div>
+        <div class="highlight-item">
+          <i class="fa fa-line-chart"></i>
+          <span>专业分析工具</span>
         </div>
       </div>
     </div>
