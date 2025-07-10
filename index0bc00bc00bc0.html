@@ -16,8 +16,8 @@
     <link href="skin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="skin/css/style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com/"></script>
-    <link href="cdn.jsdelivr.net/npm/font-awesome%404.7.0/css/font-awesome.min.html" rel="stylesheet">
-    <script src="cdn.jsdelivr.net/npm/chart.js%404.4.8/dist/chart.umd.min.html"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.js"></script>
     <script src="skin/js/jquery.min.js" defer></script>
     <script src="skin/js/bootstrap.min.js" defer></script>
     <script type="text/javascript" src="skin/js/touchslide.1.1.js"></script>
@@ -151,6 +151,11 @@
             padding: 30px;
             margin: 40px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+            min-height: 300px;
+        }
+        .chart-wrapper canvas {
+            max-width: 100%;
+            height: auto !important;
         }
         .competitive-analysis {
             display: grid;
@@ -486,7 +491,9 @@
                         <!-- Hashrate Chart -->
                         <div class="chart-wrapper">
                             <h4>NYDIG’s Projected Hashrate Growth (2023–2026)</h4>
-                            <canvas id="hashrateChart" width="400" height="200"></canvas>
+                            <div style="position: relative; height: 300px;">
+                                <canvas id="hashrateChart"></canvas>
+                            </div>
                         </div>
                         <!-- Legal Dispute Context -->
                         <h4>The Mintvest Lawsuit: A Cloud Over Expansion</h4>
@@ -603,38 +610,73 @@
     <script>
         $(function() {
             try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
+
             // Hashrate Chart Initialization
-            const ctx = document.getElementById('hashrateChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['2023', '2024', '2025', '2026'],
-                    datasets: [{
-                        label: 'NYDIG Hashrate (PH/s)',
-                        data: [150, 400, 850, 1200],
-                        backgroundColor: '#3498db',
-                        borderWidth: 0,
-                        borderRadius: 8,
-                        borderSkipped: false
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                        title: {
-                            display: true,
-                            text: 'NYDIG Projected Hashrate Growth (2023–2026)'
-                        }
+            function initChart() {
+                if (typeof Chart === 'undefined') {
+                    console.error('Chart.js not loaded');
+                    return;
+                }
+
+                const canvas = document.getElementById('hashrateChart');
+                if (!canvas) {
+                    console.error('Canvas element not found');
+                    return;
+                }
+
+                const ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['2023', '2024', '2025', '2026'],
+                        datasets: [{
+                            label: 'NYDIG Hashrate (PH/s)',
+                            data: [150, 400, 850, 1200],
+                            backgroundColor: '#3498db',
+                            borderWidth: 0,
+                            borderRadius: 8,
+                            borderSkipped: false
+                        }]
                     },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: { text: 'Hashrate (PH/s)' }
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: 'NYDIG Projected Hashrate Growth (2023–2026)',
+                                font: { size: 16, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Hashrate (PH/s)',
+                                    font: { size: 14 }
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year',
+                                    font: { size: 14 }
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+            }
+
+            // Initialize chart when Chart.js is ready
+            if (typeof Chart !== 'undefined') {
+                initChart();
+            } else {
+                // Wait for Chart.js to load
+                setTimeout(initChart, 100);
+            }
             // Smooth Scroll
             $('a[href^="#"]').on('click', function(e) {
                 e.preventDefault();
