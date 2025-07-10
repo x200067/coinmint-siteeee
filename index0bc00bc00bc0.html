@@ -18,6 +18,18 @@
     <script src="https://cdn.tailwindcss.com/"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.js"></script>
+    <script>
+        // Ensure Chart.js is loaded before proceeding
+        window.chartJsLoaded = false;
+        window.addEventListener('load', function() {
+            if (typeof Chart !== 'undefined') {
+                window.chartJsLoaded = true;
+                console.log('Chart.js loaded successfully');
+            } else {
+                console.error('Chart.js failed to load');
+            }
+        });
+    </script>
     <script src="skin/js/jquery.min.js" defer></script>
     <script src="skin/js/bootstrap.min.js" defer></script>
     <script type="text/javascript" src="skin/js/touchslide.1.1.js"></script>
@@ -613,70 +625,110 @@
 
             // Hashrate Chart Initialization
             function initChart() {
+                console.log('Attempting to initialize chart...');
+
                 if (typeof Chart === 'undefined') {
                     console.error('Chart.js not loaded');
-                    return;
+                    return false;
                 }
 
                 const canvas = document.getElementById('hashrateChart');
                 if (!canvas) {
                     console.error('Canvas element not found');
-                    return;
+                    return false;
                 }
 
-                const ctx = canvas.getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['2023', '2024', '2025', '2026'],
-                        datasets: [{
-                            label: 'NYDIG Hashrate (PH/s)',
-                            data: [150, 400, 850, 1200],
-                            backgroundColor: '#3498db',
-                            borderWidth: 0,
-                            borderRadius: 8,
-                            borderSkipped: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            title: {
-                                display: true,
-                                text: 'NYDIG Projected Hashrate Growth (2023–2026)',
-                                font: { size: 16, weight: 'bold' }
-                            }
+                console.log('Chart.js and canvas found, creating chart...');
+
+                try {
+                    const ctx = canvas.getContext('2d');
+
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['2023', '2024', '2025', '2026'],
+                            datasets: [{
+                                label: 'NYDIG Hashrate (PH/s)',
+                                data: [150, 400, 850, 1200],
+                                backgroundColor: '#3498db',
+                                borderWidth: 0,
+                                borderRadius: 8,
+                                borderSkipped: false
+                            }]
                         },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
                                 title: {
                                     display: true,
-                                    text: 'Hashrate (PH/s)',
-                                    font: { size: 14 }
+                                    text: 'NYDIG Projected Hashrate Growth (2023–2026)',
+                                    font: { size: 16, weight: 'bold' }
                                 }
                             },
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Year',
-                                    font: { size: 14 }
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Hashrate (PH/s)',
+                                        font: { size: 14 }
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Year',
+                                        font: { size: 14 }
+                                    }
                                 }
                             }
                         }
-                    }
-                });
+                    });
+
+                    console.log('Chart created successfully!');
+                    return true;
+                } catch (error) {
+                    console.error('Error creating chart:', error);
+                    return false;
+                }
             }
 
-            // Initialize chart when Chart.js is ready
-            if (typeof Chart !== 'undefined') {
-                initChart();
-            } else {
-                // Wait for Chart.js to load
-                setTimeout(initChart, 100);
+            // Multiple initialization attempts
+            function attemptChartInit() {
+                let attempts = 0;
+                const maxAttempts = 20;
+
+                function tryInit() {
+                    attempts++;
+                    console.log(`Chart initialization attempt ${attempts}`);
+
+                    if (initChart()) {
+                        console.log('Chart initialized successfully!');
+                        return;
+                    }
+
+                    if (attempts < maxAttempts) {
+                        setTimeout(tryInit, 500);
+                    } else {
+                        console.error('Failed to initialize chart after', maxAttempts, 'attempts');
+                        // Fallback: show a simple message
+                        const canvas = document.getElementById('hashrateChart');
+                        if (canvas) {
+                            const parent = canvas.parentElement;
+                            parent.innerHTML = '<p style="color: #fff; text-align: center; padding: 50px;">Chart loading... Please refresh if not visible.</p>';
+                        }
+                    }
+                }
+
+                tryInit();
             }
+
+            // Start initialization when everything is ready
+            window.addEventListener('load', function() {
+                setTimeout(attemptChartInit, 1000);
+            });
             // Smooth Scroll
             $('a[href^="#"]').on('click', function(e) {
                 e.preventDefault();
