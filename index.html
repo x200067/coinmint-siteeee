@@ -975,7 +975,12 @@
     <h3>Latest articles</h3>
     
   </div>
-  <ul id="post-list"></ul>
+  <ul id="post-list">
+    <div class="loading-spinner" style="text-align: center; padding: 40px;">
+      <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <p style="margin-top: 15px; color: #666;">Loading latest articles...</p>
+    </div>
+  </ul>
   <div id="post-detail" style="display: none;">
     <button id="back-button">← 返回列表</button>
     <h1 id="post-title"></h1>
@@ -1328,6 +1333,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // setTimeout(function() {
     //     document.getElementById('cta-modal').style.display = 'flex';
     // }, 3000);
+
+    // 加载每日文章
+    loadDailyArticles();
 });
 
 // 点击模态框背景关闭
@@ -1337,6 +1345,188 @@ document.addEventListener('click', function(e) {
         modal.style.display = 'none';
     }
 });
+
+// 每日文章加载功能
+function loadDailyArticles() {
+    setTimeout(() => {
+        const articles = generateDailyArticles();
+        displayDailyArticles(articles);
+    }, 1500);
+}
+
+function generateDailyArticles() {
+    const today = new Date();
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+    const articleTemplates = [
+        {
+            title: "Bitcoin Mining Efficiency Reaches New Heights in 2024",
+            summary: "Latest ASIC technology improvements show 15% increase in hash rate efficiency, reducing operational costs for major mining operations worldwide.",
+            category: "Technology",
+            readTime: "3 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Institutional Adoption of Cryptocurrency Mining Accelerates",
+            summary: "Major financial institutions are increasingly investing in Bitcoin mining infrastructure as a hedge against inflation and portfolio diversification.",
+            category: "Finance",
+            readTime: "5 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Renewable Energy Powers 60% of Global Bitcoin Mining",
+            summary: "New sustainability report shows significant shift towards clean energy sources in cryptocurrency mining operations across North America.",
+            category: "Sustainability",
+            readTime: "4 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Regulatory Clarity Boosts Mining Investment Confidence",
+            summary: "Recent regulatory frameworks provide clearer guidelines for cryptocurrency mining operations across multiple jurisdictions.",
+            category: "Regulation",
+            readTime: "6 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Next-Generation Mining Hardware Announced by Leading Manufacturers",
+            summary: "Industry leaders unveil new mining equipment with improved performance and energy efficiency ratings for 2024.",
+            category: "Hardware",
+            readTime: "4 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Mining Pool Consolidation Trends Continue Across Industry",
+            summary: "Analysis of current mining pool distribution and its impact on network decentralization and security measures.",
+            category: "Analysis",
+            readTime: "7 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Coinmint Expands Operations with New Facility in Upstate New York",
+            summary: "Strategic expansion includes 50MW of additional capacity powered entirely by renewable hydroelectric energy sources.",
+            category: "Company News",
+            readTime: "3 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        },
+        {
+            title: "Blockchain Infrastructure Investment Reaches Record Highs",
+            summary: "Venture capital and institutional investment in blockchain infrastructure projects surpasses $2 billion in Q4 2024.",
+            category: "Investment",
+            readTime: "5 min read",
+            date: new Date(today.getTime() - Math.floor(Math.random() * 7) * 24 * 60 * 60 * 1000)
+        }
+    ];
+
+    // Use seed to select 4 articles for today
+    const selectedArticles = [];
+    for (let i = 0; i < 4; i++) {
+        const index = (seed + i) % articleTemplates.length;
+        selectedArticles.push(articleTemplates[index]);
+    }
+
+    // Sort by date (newest first)
+    selectedArticles.sort((a, b) => b.date - a.date);
+
+    return selectedArticles;
+}
+
+function formatArticleDate(date) {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+function displayDailyArticles(articles) {
+    const postList = document.getElementById('post-list');
+
+    let articlesHTML = '';
+    articles.forEach((article, index) => {
+        articlesHTML += `
+            <li class="article-item" style="
+                background: white;
+                border-radius: 12px;
+                padding: 25px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+                transition: all 0.3s ease;
+                border-left: 4px solid #3498db;
+                animation: fadeInUp 0.6s ease ${index * 0.15}s both;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'"
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                    <span style="
+                        background: linear-gradient(135deg, #3498db, #2980b9);
+                        color: white;
+                        padding: 6px 14px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    ">${article.category}</span>
+                    <span style="color: #666; font-size: 14px; font-weight: 500;">${formatArticleDate(article.date)}</span>
+                </div>
+                <h4 style="
+                    color: #2c3e50;
+                    margin-bottom: 12px;
+                    font-size: 20px;
+                    line-height: 1.4;
+                    font-weight: 600;
+                ">${article.title}</h4>
+                <p style="
+                    color: #666;
+                    line-height: 1.6;
+                    margin-bottom: 15px;
+                    font-size: 15px;
+                ">${article.summary}</p>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: #999; font-size: 14px; font-weight: 500;">
+                        <i class="fa fa-clock-o" style="margin-right: 5px;"></i>${article.readTime}
+                    </span>
+                    <span style="
+                        color: #3498db;
+                        font-weight: 600;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    ">Read More →</span>
+                </div>
+            </li>
+        `;
+    });
+
+    postList.innerHTML = articlesHTML;
+}
+</script>
+
+<!-- CSS Animations for Daily Articles -->
+<style>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#blog ul#post-list {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.article-item:hover {
+    border-left-color: #2980b9 !important;
+}
+</style>
+
 </script>
 <!-- Headless 前端逻辑 结束 -->
 </body>
