@@ -579,6 +579,17 @@
                                 <p>How NYDIG’s model could inspire Goldman Sachs, BlackRock, and others to enter the space.</p>
                             </div>
                         </div>
+
+                        <!-- Latest Articles Section -->
+                        <div class="latest-articles-section" style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px;">
+                            <h3 style="color: #2c3e50; text-align: center; margin-bottom: 30px; font-size: 28px;">Latest Articles</h3>
+                            <div id="articles-container" class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                                <div class="loading-spinner" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                                    <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                                    <p style="margin-top: 15px; color: #666;">Loading latest articles...</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -643,6 +654,9 @@
     <script>
         $(function() {
             try { if (typeof WOW !== "undefined") { new WOW().init(); } } catch (e) { console.warn("WOW init failed:", e); }
+
+            // Load latest articles
+            loadLatestArticles();
 
             // Hashrate Chart Initialization
             function initChart() {
@@ -757,8 +771,149 @@
                     scrollTop: $($(this).attr('href')).offset().top - 30
                 }, 600);
             });
+        }
+
+        // Latest Articles Functionality
+        function loadLatestArticles() {
+            // Simulate loading delay
+            setTimeout(() => {
+                const articles = generateDailyArticles();
+                displayArticles(articles);
+            }, 1500);
+        }
+
+        function generateDailyArticles() {
+            const today = new Date();
+            const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+            const articleTemplates = [
+                {
+                    title: "Bitcoin Mining Efficiency Reaches New Heights",
+                    summary: "Latest ASIC technology improvements show 15% increase in hash rate efficiency, reducing operational costs for major mining operations.",
+                    category: "Technology",
+                    readTime: "3 min read"
+                },
+                {
+                    title: "Institutional Adoption of Cryptocurrency Mining Accelerates",
+                    summary: "Major financial institutions are increasingly investing in Bitcoin mining infrastructure as a hedge against inflation.",
+                    category: "Finance",
+                    readTime: "5 min read"
+                },
+                {
+                    title: "Renewable Energy Powers 60% of Global Bitcoin Mining",
+                    summary: "New sustainability report shows significant shift towards clean energy sources in cryptocurrency mining operations.",
+                    category: "Sustainability",
+                    readTime: "4 min read"
+                },
+                {
+                    title: "Regulatory Clarity Boosts Mining Investment Confidence",
+                    summary: "Recent regulatory frameworks provide clearer guidelines for cryptocurrency mining operations across multiple jurisdictions.",
+                    category: "Regulation",
+                    readTime: "6 min read"
+                },
+                {
+                    title: "Next-Generation Mining Hardware Announced",
+                    summary: "Leading manufacturers unveil new mining equipment with improved performance and energy efficiency ratings.",
+                    category: "Hardware",
+                    readTime: "4 min read"
+                },
+                {
+                    title: "Mining Pool Consolidation Trends Continue",
+                    summary: "Analysis of current mining pool distribution and its impact on network decentralization and security.",
+                    category: "Analysis",
+                    readTime: "7 min read"
+                }
+            ];
+
+            // Use seed to select 3 articles for today
+            const selectedArticles = [];
+            for (let i = 0; i < 3; i++) {
+                const index = (seed + i) % articleTemplates.length;
+                selectedArticles.push({
+                    ...articleTemplates[index],
+                    date: formatDate(new Date(today.getTime() - i * 24 * 60 * 60 * 1000))
+                });
+            }
+
+            return selectedArticles;
+        }
+
+        function formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function displayArticles(articles) {
+            const container = document.getElementById('articles-container');
+
+            let articlesHTML = '';
+            articles.forEach((article, index) => {
+                articlesHTML += `
+                    <div class="article-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; animation: fadeInUp 0.6s ease ${index * 0.2}s both;">
+                        <div class="article-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <span class="article-category" style="background: #3498db; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">${article.category}</span>
+                            <span class="article-date" style="color: #666; font-size: 14px;">${article.date}</span>
+                        </div>
+                        <h4 style="color: #2c3e50; margin-bottom: 15px; font-size: 18px; line-height: 1.4;">${article.title}</h4>
+                        <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">${article.summary}</p>
+                        <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="read-time" style="color: #999; font-size: 14px;">${article.readTime}</span>
+                            <a href="#" class="read-more" style="color: #3498db; text-decoration: none; font-weight: bold; font-size: 14px;">Read More →</a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = articlesHTML;
+
+            // Add hover effects
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.article-card');
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                    });
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+                    });
+                });
+            }, 100);
         });
     </script>
+
+    <!-- CSS Animations for Articles -->
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-card:hover .read-more {
+            color: #2980b9 !important;
+        }
+
+        .articles-grid {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </body>
 <!-- Mirrored from coinmint.net/bb.coinmint.cc/index0bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 29 Jun 2025 20:30:36 GMT -->
 <!-- Mirrored from coinmint.net/index0bc00bc0?pages_40/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jun 2025 19:08:20 GMT -->
