@@ -908,28 +908,16 @@
     </div>
   </div>
 </div>
-<!-- Latest News -->
-<div id="news" class="container">
+<!-- Latest Articles -->
+<div id="articles" class="container">
   <div class="home_top wow fadeInUp">
-    <h3>Latest News</h3>
-    
+    <h3>Latest Articles</h3>
   </div>
-  <div class="news-con row">
-    <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
-      <h4>NYDIG Strategic Investment in Coinmint</h4>
-      <p class="news-date">June 15, 2025</p>
-      <p>NYDIG, a global leader in digital asset investment, has announced a strategic investment in Coinmint. The partnership will focus on expanding computing infrastructure and promoting the use of clean energy in blockchain mining, further strengthening Coinmint's position in the global blockchain industry.</p>
-      <a class='btn btn-link' href='index0bc00bc00bc0.html?pages_40/'>Read More <i class="glyphicon glyphicon-arrow-right"></i></a>
+  <div id="articles-container">
+    <div class="loading-spinner" style="text-align: center; padding: 60px;">
+      <div style="display: inline-block; width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <p style="margin-top: 20px; color: #666; font-size: 16px;">Loading latest articles...</p>
     </div>
-    <div class="col-md-6 wow fadeInRight" data-wow-delay=".4s">
-      <h4>Coinmint Adds 50,000 Miners, Reaches 100+ PH/s</h4>
-      <p class="news-date">May 28, 2025</p>
-      <p>Coinmint announces the addition of 50,000 state-of-the-art miners to its North American data centers, bringing total computing power to over 100 PH/s. This expansion solidifies Coinmint's position as one of the world's largest and most efficient blockchain infrastructure providers, ensuring higher returns for our clients.</p>
-      <a class='btn btn-link' href='indexbe3ebe3ebe3e.html?pages_41/'>Read More <i class="glyphicon glyphicon-arrow-right"></i></a>
-    </div>
-  </div>
-  <div class="text-center mt-4">
-    <a class='btn btn-primary' href='index7db57db57db5.html?list_39/'>View All News</a>
   </div>
 </div>
 <div class="clear"></div>
@@ -968,26 +956,7 @@
     </div>
   </div>
 </div>
-<div class="clear"></div>
-<!-- Headless Blog 区块 开始 -->
-<div id="blog" class="container">
-  <div class="home_top wow fadeInUp">
-    <h3>Latest articles</h3>
-    
-  </div>
-  <ul id="post-list">
-    <div class="loading-spinner" style="text-align: center; padding: 40px;">
-      <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-      <p style="margin-top: 15px; color: #666;">Loading latest articles...</p>
-    </div>
-  </ul>
-  <div id="post-detail" style="display: none;">
-    <button id="back-button">← 返回列表</button>
-    <h1 id="post-title"></h1>
-    <div id="post-content"></div>
-  </div>
-</div>
-<!-- Headless Blog 区块 结束 -->
+
 </main>
 <!-- End Main Content -->
 
@@ -1436,66 +1405,90 @@ function formatArticleDate(date) {
 }
 
 function displayDailyArticles(articles) {
-    const postList = document.getElementById('post-list');
+    const articlesContainer = document.getElementById('articles-container');
 
-    let articlesHTML = '';
+    let articlesHTML = '<div class="row">';
     articles.forEach((article, index) => {
         articlesHTML += `
-            <li class="article-item" style="
-                background: white;
-                border-radius: 12px;
-                padding: 25px;
-                margin-bottom: 20px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-                transition: all 0.3s ease;
-                border-left: 4px solid #3498db;
-                animation: fadeInUp 0.6s ease ${index * 0.15}s both;
-                cursor: pointer;
-            " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)'"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                    <span style="
-                        background: linear-gradient(135deg, #3498db, #2980b9);
-                        color: white;
-                        padding: 6px 14px;
-                        border-radius: 20px;
-                        font-size: 12px;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                    ">${article.category}</span>
-                    <span style="color: #666; font-size: 14px; font-weight: 500;">${formatArticleDate(article.date)}</span>
+            <div class="col-md-6" style="margin-bottom: 30px;">
+                <div class="article-card" style="
+                    background: white;
+                    border-radius: 15px;
+                    padding: 30px;
+                    height: 100%;
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                    transition: all 0.4s ease;
+                    border: 1px solid #f0f0f0;
+                    position: relative;
+                    overflow: hidden;
+                    animation: fadeInUp 0.8s ease ${index * 0.2}s both;
+                    cursor: pointer;
+                " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.15)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'">
+
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(135deg, #3498db, #2980b9);"></div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <span style="
+                            background: linear-gradient(135deg, #3498db, #2980b9);
+                            color: white;
+                            padding: 8px 16px;
+                            border-radius: 25px;
+                            font-size: 11px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+                        ">${article.category}</span>
+                        <span style="color: #999; font-size: 13px; font-weight: 600;">${formatArticleDate(article.date)}</span>
+                    </div>
+
+                    <h4 style="
+                        color: #2c3e50;
+                        margin-bottom: 15px;
+                        font-size: 22px;
+                        line-height: 1.3;
+                        font-weight: 700;
+                        min-height: 66px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    ">${article.title}</h4>
+
+                    <p style="
+                        color: #666;
+                        line-height: 1.7;
+                        margin-bottom: 25px;
+                        font-size: 15px;
+                        min-height: 102px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    ">${article.summary}</p>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #f0f0f0;">
+                        <span style="color: #999; font-size: 14px; font-weight: 600; display: flex; align-items: center;">
+                            <i class="fa fa-clock-o" style="margin-right: 8px; color: #3498db;"></i>${article.readTime}
+                        </span>
+                        <span style="
+                            color: #3498db;
+                            font-weight: 700;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            display: flex;
+                            align-items: center;
+                        ">Read More <i class="fa fa-arrow-right" style="margin-left: 8px; transition: transform 0.3s ease;"></i></span>
+                    </div>
                 </div>
-                <h4 style="
-                    color: #2c3e50;
-                    margin-bottom: 12px;
-                    font-size: 20px;
-                    line-height: 1.4;
-                    font-weight: 600;
-                ">${article.title}</h4>
-                <p style="
-                    color: #666;
-                    line-height: 1.6;
-                    margin-bottom: 15px;
-                    font-size: 15px;
-                ">${article.summary}</p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: #999; font-size: 14px; font-weight: 500;">
-                        <i class="fa fa-clock-o" style="margin-right: 5px;"></i>${article.readTime}
-                    </span>
-                    <span style="
-                        color: #3498db;
-                        font-weight: 600;
-                        font-size: 14px;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                    ">Read More →</span>
-                </div>
-            </li>
+            </div>
         `;
     });
+    articlesHTML += '</div>';
 
-    postList.innerHTML = articlesHTML;
+    articlesContainer.innerHTML = articlesHTML;
 }
 </script>
 
@@ -1517,13 +1510,16 @@ function displayDailyArticles(articles) {
     }
 }
 
-#blog ul#post-list {
-    list-style: none !important;
-    padding: 0 !important;
+#articles-container {
+    min-height: 400px;
 }
 
-.article-item:hover {
-    border-left-color: #2980b9 !important;
+.article-card:hover .fa-arrow-right {
+    transform: translateX(5px) !important;
+}
+
+.article-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 </style>
 
