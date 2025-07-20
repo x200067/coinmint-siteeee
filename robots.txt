@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# 允许搜索引擎访问主要页面
+Allow: /index.html
+Allow: /index2b652b652b65.html
+Allow: /index932e932e932e.html
+Allow: /indexb2beb2beb2be.html
+Allow: /index556855685568.html
+Allow: /trading-platform.html
+
+# 禁止访问敏感目录和文件
+Disallow: /admin/
+Disallow: /backups/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /bt-panel-config/
+Disallow: /*.js$
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.log$
+Disallow: /temp-*
+Disallow: /test-*
+Disallow: /verify-*
+
+# 网站地图位置
+Sitemap: https://your-domain.com/sitemap.xml
+
+# 爬取延迟（可选）
+Crawl-delay: 1

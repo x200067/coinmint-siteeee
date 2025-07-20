@@ -1,0 +1,40 @@
+# 搜索引擎验证文件说明
+# 请根据需要创建以下验证文件
+
+# Google Search Console 验证
+# 文件名: google[验证码].html
+# 内容: google-site-verification: google[验证码].html
+# 示例文件名: google123abc456def.html
+
+# 百度站长平台验证
+# 文件名: baidu_verify_[验证码].html
+# 内容: [验证码]
+# 示例文件名: baidu_verify_123abc456def.html
+
+# 360搜索验证
+# 文件名: 360_[验证码].html
+# 内容: [验证码]
+# 示例文件名: 360_123abc456def.html
+
+# 搜狗验证
+# 文件名: sogou_[验证码].html
+# 内容: [验证码]
+# 示例文件名: sogou_123abc456def.html
+
+# 必应验证
+# 文件名: BingSiteAuth.xml
+# 内容: <?xml version="1.0"?>
+#       <users>
+#           <user>[验证码]</user>
+#       </users>
+
+# 使用说明：
+# 1. 在各搜索引擎站长平台添加网站
+# 2. 选择HTML文件验证方式
+# 3. 下载验证文件并上传到网站根目录
+# 4. 完成验证后可以提交sitemap.xml
+
+# 重要提醒：
+# - 验证文件必须放在网站根目录
+# - 验证完成后不要删除验证文件
+# - 定期检查验证状态
